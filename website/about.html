@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSPA — About the Founder</title>
+<meta name="description" content="VERSPA is founded by a UK-based renewable energy finance professional with an MSc in Finance & Data Analytics, Cambridge Judge Business School credentials and a proven track record in energy systems, finance and data infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0C0E;
+  --ink-70:rgba(11,12,14,.7);
+  --ink-40:rgba(11,12,14,.4);
+  --ink-12:rgba(11,12,14,.08);
+  --white:#FFFFFF;
+  --off:#F7F6F2;
+  --teal:#0A6648;
+  --teal-bright:#13996B;
+  --teal-pale:#EAF4EF;
+  --border:#E3E1DA;
+  --F:'Libre Baskerville',Georgia,serif;
+  --S:'Plus Jakarta Sans',system-ui,sans-serif;
+  --M:'Space Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--S);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--teal);color:#fff}
+h1{font-family:var(--F);font-size:clamp(3rem,5.5vw,6rem);font-weight:700;line-height:.97;letter-spacing:-.025em}
+h2{font-family:var(--F);font-size:clamp(2.2rem,3.8vw,4rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+h3{font-family:var(--F);font-size:clamp(1.3rem,2vw,1.9rem);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+.it{font-style:italic;color:var(--teal)}
+.label{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+p{font-size:1.05rem;font-weight:300;line-height:1.78;color:var(--ink-70)}
+p.lg{font-size:1.15rem;line-height:1.75}
+p.sm{font-size:.88rem;line-height:1.72}
+.container{max-width:1320px;margin:0 auto;padding:0 5vw}
+section{padding:7rem 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--S);font-size:.85rem;font-weight:700;letter-spacing:.01em;padding:.9rem 2rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none;border:none;white-space:nowrap}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--teal);transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,102,72,.25)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-bright);transform:translateY(-1px)}
+
+nav{position:fixed;inset:0 0 auto;z-index:900;height:66px;transition:all .3s}
+nav.up{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1320px;margin:0 auto;padding:0 5vw}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.lm{width:34px;height:34px;background:var(--ink);border-radius:5px;display:grid;place-items:center}
+.lm svg{width:20px;height:20px}
+.ln{font-family:var(--S);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.nl{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nl a{font-size:.82rem;font-weight:500;color:var(--ink-70);text-decoration:none;transition:color .15s}
+.nl a:hover,.nl a.active{color:var(--ink)}
+.na{display:flex;gap:.6rem}
+
+/* HERO */
+.page-hero{padding:9rem 0 6rem;background:var(--white)}
+.hero-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--teal-pale);border:1px solid rgba(10,102,72,.2);padding:.4rem 1rem .4rem .7rem;border-radius:100px;margin-bottom:2rem}
+.badge-dot{width:7px;height:7px;background:var(--teal-bright);border-radius:50%;animation:blink 2s infinite}
+.founder-card{background:var(--ink);border-radius:16px;padding:2.5rem;display:flex;flex-direction:column;gap:1.5rem}
+.fc-name{font-family:var(--F);font-size:1.8rem;font-weight:700;color:#fff;line-height:1.1}
+.fc-role{font-size:.8rem;font-weight:600;color:var(--teal-bright);letter-spacing:.08em;text-transform:uppercase;font-family:var(--S);margin-top:.25rem}
+.fc-divider{height:1px;background:rgba(255,255,255,.1)}
+.fc-creds{display:flex;flex-direction:column;gap:.75rem}
+.fc-cred{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px}
+.fc-cred-icon{width:32px;height:32px;border-radius:7px;background:rgba(19,153,107,.15);display:grid;place-items:center;flex-shrink:0}
+.fc-cred-icon svg{width:16px;height:16px;stroke:var(--teal-bright);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.fc-cred-title{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.82);font-family:var(--S);line-height:1.35}
+.fc-cred-sub{font-size:.65rem;color:rgba(255,255,255,.32);font-family:var(--S);margin-top:.15rem}
+.fc-flag{display:flex;align-items:center;gap:.5rem;padding-top:.25rem}
+.fc-flag-item{font-size:.65rem;font-weight:600;font-family:var(--M);color:rgba(255,255,255,.3);padding:.2rem .6rem;background:rgba(255,255,255,.05);border-radius:4px}
+
+/* MISSION */
+#mission{background:var(--off)}
+.mission-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.mission-values{display:flex;flex-direction:column;gap:1px;margin-top:4rem;background:var(--border)}
+.mv{background:var(--white);padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:background .2s}
+.mv:hover{background:var(--teal-pale)}
+.mv-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.55rem}
+.mv-title{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;font-family:var(--S)}
+.mv-body{font-size:.85rem;color:var(--ink-70);line-height:1.6}
+
+/* CREDENTIALS */
+#credentials{background:var(--white)}
+.cred-grid{display:flex;flex-direction:column;gap:2px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.cred-row{background:var(--white);display:grid;grid-template-columns:280px 1fr 180px;gap:2rem;align-items:start;padding:2.75rem 3rem;transition:background .15s}
+.cred-row:hover{background:var(--off)}
+.cred-org{font-size:.82rem;font-weight:700;color:var(--ink);font-family:var(--S);line-height:1.35}
+.cred-role{font-size:.75rem;font-weight:500;color:var(--ink-40);margin-top:.2rem;font-family:var(--S)}
+.cred-body{font-size:.88rem;color:var(--ink-70);line-height:1.72}
+.cred-tag{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--teal-pale);color:var(--teal);padding:.3rem .75rem;border-radius:4px;font-family:var(--S);align-self:start;white-space:nowrap;text-align:center}
+
+/* PIVOT STORY */
+#pivot{background:var(--off)}
+.pivot-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.pivot-visual{background:var(--ink);border-radius:16px;padding:2.5rem;display:flex;flex-direction:column;gap:1rem}
+.pv-label{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28);font-family:var(--S)}
+.pv-from{padding:1.25rem 1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px}
+.pv-to{padding:1.25rem 1.5rem;background:rgba(10,102,72,.15);border:1px solid rgba(10,102,72,.3);border-radius:10px}
+.pv-title{font-size:.88rem;font-weight:700;color:rgba(255,255,255,.85);font-family:var(--S);margin-bottom:.35rem}
+.pv-body{font-size:.75rem;color:rgba(255,255,255,.38);font-family:var(--S);line-height:1.55}
+.pv-arrow{text-align:center;font-size:1.2rem;color:var(--teal-bright);padding:.25rem 0}
+.pv-advisor{margin-top:.5rem;padding:1rem 1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;font-size:.72rem;color:rgba(255,255,255,.35);font-family:var(--S);line-height:1.5}
+.pv-advisor strong{color:rgba(255,255,255,.65)}
+
+/* WHY NOW */
+#whynow{background:var(--white)}
+.whynow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.wn-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:2rem;transition:all .2s}
+.wn-card:hover{border-color:var(--teal);transform:translateY(-3px)}
+.wn-num{font-family:var(--F);font-size:3rem;font-weight:700;color:var(--border);line-height:1;margin-bottom:1.25rem;transition:color .2s}
+.wn-card:hover .wn-num{color:var(--teal)}
+.wn-title{font-size:.93rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;font-family:var(--S)}
+.wn-body{font-size:.84rem;color:var(--ink-70);line-height:1.7}
+
+/* CTA */
+#connect{background:var(--ink);padding:7rem 0}
+.connect-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.connect-text h2{color:#fff}
+.connect-text p{color:rgba(255,255,255,.45);margin-top:1.25rem}
+.connect-actions{display:flex;flex-direction:column;gap:1rem}
+.ca{display:flex;align-items:center;gap:1.25rem;padding:1.5rem 2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;text-decoration:none;transition:all .2s}
+.ca:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.15);transform:translateX(4px)}
+.ca-icon{width:40px;height:40px;border-radius:8px;background:rgba(19,153,107,.2);display:grid;place-items:center;flex-shrink:0}
+.ca-icon svg{width:20px;height:20px;stroke:var(--teal-bright);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ca-title{font-size:.9rem;font-weight:700;color:#fff;font-family:var(--S)}
+.ca-sub{font-size:.75rem;color:rgba(255,255,255,.38);font-family:var(--S);margin-top:.1rem}
+
+footer{background:var(--off);border-top:1px solid var(--border);padding:5rem 0 2.5rem}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.fb-logo{display:flex;align-items:center;gap:.45rem;text-decoration:none;margin-bottom:1.1rem}
+.fb-tag{font-size:.87rem;color:var(--ink-70);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.5rem}
+.fsb{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink-40);text-decoration:none;transition:all .15s;font-family:var(--S)}
+.fsb:hover{border-color:var(--teal);color:var(--teal)}
+.fcol h5{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;font-family:var(--S)}
+.fcol a{display:block;font-size:.87rem;color:var(--ink-70);text-decoration:none;margin-bottom:.6rem;transition:color .15s}
+.fcol a:hover{color:var(--teal)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.8rem;color:var(--ink-40)}
+.flegal{display:flex;gap:1.5rem}
+.flegal a{font-size:.78rem;color:var(--ink-40);text-decoration:none;transition:color .15s}
+.flegal a:hover{color:var(--ink-70)}
+.fca-note{font-size:.72rem;color:var(--ink-40);line-height:1.65;margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border);max-width:700px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+@media(max-width:1100px){
+  .hero-layout,.mission-layout,.pivot-layout,.connect-inner{grid-template-columns:1fr}
+  .cred-row{grid-template-columns:1fr;gap:1rem}
+  .fg{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  h1{font-size:2.6rem}h2{font-size:1.9rem}
+  nav .nl,.na .btn-line{display:none}
+  .ni{padding:0 1.25rem}
+  section{padding:5rem 0}
+  .container{padding:0 1.25rem}
+  .whynow-grid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .fbot{flex-direction:column;align-items:flex-start}
+  .cred-row{padding:1.75rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo">
+      <div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="ln">VERSPA</span>
+    </a>
+    <ul class="nl">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="launchpad.html">Launchpad</a></li>
+      <li><a href="for-project-owners.html">For Developers</a></li>
+      <li><a href="for-funding-partners.html">For Investors</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <div class="na">
+      <a href="book-a-call.html" class="btn btn-line" style="font-size:.8rem;padding:.6rem 1.1rem">Book a Call</a>
+      <a href="apply.html" class="btn btn-dark" style="font-size:.8rem;padding:.6rem 1.25rem">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-badge rv">
+          <div class="badge-dot"></div>
+          <span class="label" style="letter-spacing:.08em">Founded in London, UK</span>
+        </div>
+        <h1 class="rv d1">Built by someone<br>who has been<br><span class="it">inside the problem.</span></h1>
+        <p class="lg rv d2" style="margin-top:1.5rem;max-width:540px">VERSPA exists because its founder has worked at the intersection of UK energy systems, finance and data infrastructure — and saw the gap first-hand. Not a platform built from the outside looking in. Built from inside the industry, by someone who understands every layer of the problem.</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.25rem" class="rv d2">
+          <a href="book-a-call.html" class="btn btn-dark">Book a Discovery Call</a>
+          <a href="regulatory-status.html" class="btn btn-line">Our Regulatory Status</a>
+        </div>
+      </div>
+
+      <div class="founder-card rv d1">
+        <div>
+          <div class="fc-name">The Founder</div>
+          <div class="fc-role">VERSPA — Founder &amp; CEO</div>
+        </div>
+        <div class="fc-divider"></div>
+        <div class="fc-creds">
+          <div class="fc-cred">
+            <div class="fc-cred-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div>
+              <div class="fc-cred-title">MSc Finance &amp; Data Analytics</div>
+              <div class="fc-cred-sub">Postgraduate — regulated investment &amp; data infrastructure</div>
+            </div>
+          </div>
+          <div class="fc-cred">
+            <div class="fc-cred-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div>
+              <div class="fc-cred-title">Smart Metering PLC — Group Finance</div>
+              <div class="fc-cred-sub">Senior Systems Analyst — Metis.co.uk energy platform</div>
+            </div>
+          </div>
+          <div class="fc-cred">
+            <div class="fc-cred-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+            <div>
+              <div class="fc-cred-title">Cambridge Judge Business School</div>
+              <div class="fc-cred-sub">Breaking Barriers — Enterprise Tech Cohort 17</div>
+            </div>
+          </div>
+          <div class="fc-cred">
+            <div class="fc-cred-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div>
+              <div class="fc-cred-title">W3-Energy.org — Prior MVP</div>
+              <div class="fc-cred-sub">Cross-border renewable energy finance — built and pivoted</div>
+            </div>
+          </div>
+        </div>
+        <div class="fc-divider"></div>
+        <div class="fc-flag">
+          <div class="fc-flag-item">UK FLR Section C</div>
+          <div class="fc-flag-item">London</div>
+          <div class="fc-flag-item">Innovator Founder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="container">
+    <div class="mission-layout">
+      <div>
+        <div class="rv"><span class="label">Mission &amp; vision</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">Democratising<br><span class="it">clean energy investment.</span></h2>
+        <p class="lg rv d2" style="margin-top:1.25rem">VERSPA's mission is to remove the structural barriers that have kept clean energy investment the preserve of large institutions — and to build the global infrastructure that connects investors, project developers and capital advisors across borders.</p>
+        <p class="rv d2" style="margin-top:1rem">The vision is a world where every renewable energy project — regardless of where it is or how large it is — can access the capital, compliance tools and advisory support it needs to reach financial close. And where every person — regardless of their wealth — can invest in the energy transition that matters to them.</p>
+      </div>
+      <div>
+        <div class="rv d1"><span class="label">Core values</span></div>
+        <div class="mission-values rv d2">
+          <div class="mv"><div class="mv-dot"></div><div><div class="mv-title">Democratisation</div><div class="mv-body">Removing the barriers that have kept clean energy investment the preserve of large institutions. From £10, anyone can invest in the energy transition.</div></div></div>
+          <div class="mv"><div class="mv-dot"></div><div><div class="mv-title">Transparency</div><div class="mv-body">Every project, every return, every risk clearly communicated to every stakeholder. Including our own regulatory status — what we can and cannot do, stated plainly.</div></div></div>
+          <div class="mv"><div class="mv-dot"></div><div><div class="mv-title">Sovereignty</div><div class="mv-body">Enabling communities, developers and investors to retain ownership and control of their energy assets. Capital flows should serve people, not extract from them.</div></div></div>
+          <div class="mv"><div class="mv-dot"></div><div><div class="mv-title">Inclusion</div><div class="mv-body">Actively building financial products for communities who have historically been excluded from structured investment — including UK diaspora communities with deep connections to energy-poor regions.</div></div></div>
+          <div class="mv"><div class="mv-dot"></div><div><div class="mv-title">Integrity</div><div class="mv-body">Operating to the highest regulatory standards in every jurisdiction we enter. FCA authorisation is not a box to tick — it is the foundation everything else is built on.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="container">
+    <div class="rv"><span class="label">Founder credentials</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:700px">Every credential is directly<br><span class="it">relevant to this business.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:580px">VERSPA is not a pivot into a new industry. It is a platform built at the precise intersection of the founder's professional experience across energy, finance and data infrastructure.</p>
+    <div class="cred-grid rv d2">
+      <div class="cred-row">
+        <div>
+          <div class="cred-org">MSc Finance &amp; Data Analytics</div>
+          <div class="cred-role">Postgraduate degree</div>
+        </div>
+        <div class="cred-body">Directly relevant to running a regulated investment platform, building the data infrastructure for investor reporting and automating risk assessment within VERSPA Intelligence. The quantitative and regulatory foundation for every decision the platform makes.</div>
+        <div class="cred-tag">Core foundation</div>
+      </div>
+      <div class="cred-row">
+        <div>
+          <div class="cred-org">Smart Metering PLC</div>
+          <div class="cred-role">Group Finance — Senior Systems Analyst · Metis.co.uk</div>
+        </div>
+        <div class="cred-body">Real UK energy sector experience at the intersection of energy systems, finance and data infrastructure — exactly the domain VERSPA operates in. Contribution to the Metis.co.uk platform demonstrates hands-on work building financial technology for the energy sector. This is not theoretical knowledge of the energy industry. It is operational experience inside it.</div>
+        <div class="cred-tag">Industry experience</div>
+      </div>
+      <div class="cred-row">
+        <div>
+          <div class="cred-org">Cambridge Judge Business School</div>
+          <div class="cred-role">Breaking Barriers — Enterprise Tech Cohort 17</div>
+        </div>
+        <div class="cred-body">Formal startup commercialisation training from one of the world's top business schools. The Breaking Barriers programme at Cambridge Judge is designed specifically to take technology ventures from concept to commercial execution — demonstrating both the capability and the institutional validation to build VERSPA at scale.</div>
+        <div class="cred-tag">Startup training</div>
+      </div>
+      <div class="cred-row">
+        <div>
+          <div class="cred-org">Commercial Feasibility Reports</div>
+          <div class="cred-role">Infrastructure project finance — aviation sector</div>
+        </div>
+        <div class="cred-body">Infrastructure project finance experience directly transferable to renewable energy project assessment. CFR production is built into the VERSPA Launchpad as a core service offering — and the founder has produced these reports in practice, not just in theory. The skill set is proven, practised and immediately deployable.</div>
+        <div class="cred-tag">Advisory expertise</div>
+      </div>
+      <div class="cred-row">
+        <div>
+          <div class="cred-org">W3-Energy.org MVP</div>
+          <div class="cred-role">Prior execution — cross-border renewable energy finance</div>
+        </div>
+        <div class="cred-body">An existing MVP for cross-border renewable energy finance, originally built on a blockchain architecture. The pivot from W3-Energy to VERSPA — from blockchain-centric to platform-centric — was made on the advice of Surrey Business School after rigorous evaluation. This pivot is not a failure. It is evidence-based decision-making: the kind of market-responsive judgment that serious founders and endorsing bodies recognise as a strength, not a weakness.</div>
+        <div class="cred-tag">Prior execution</div>
+      </div>
+      <div class="cred-row">
+        <div>
+          <div class="cred-org">UK Further Leave to Remain</div>
+          <div class="cred-role">Immigration status — Section C</div>
+        </div>
+        <div class="cred-body">Legally working in the United Kingdom with no switching barriers to the Innovator Founder visa route. Clean immigration history. The Innovator Founder visa is the natural next step — VERSPA is the business being built to support it, not a business invented for it.</div>
+        <div class="cred-tag">UK status</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIVOT STORY -->
+<section id="pivot">
+  <div class="container">
+    <div class="pivot-layout">
+      <div>
+        <div class="rv"><span class="label">The W3-Energy pivot</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">Evidence-based.<br><span class="it">Not a fresh start.</span></h2>
+        <p class="lg rv d2" style="margin-top:1.25rem">W3-Energy.org was a working MVP for cross-border renewable energy finance built on a blockchain architecture. It was real, built and tested — not a slide deck.</p>
+        <p class="rv d2" style="margin-top:1rem">The decision to pivot from blockchain to a regulated platform architecture was made after rigorous evaluation and on the specific advice of Surrey Business School. The blockchain infrastructure was creating unnecessary complexity and regulatory ambiguity without adding meaningful value to the core product: connecting capital to renewable energy projects across borders.</p>
+        <p class="rv d2" style="margin-top:1rem">Stripping out the blockchain layer and rebuilding as a regulated, FCA-aligned platform made the product simpler, more credible, more fundable and more directly aligned with what the market actually needs. That decision — to listen to expert advice and change direction based on evidence — is exactly what good founders do.</p>
+        <p class="rv d2" style="margin-top:1rem">VERSPA is W3-Energy, rebuilt properly. The problem being solved is identical. The approach is more sophisticated, more regulated and more scalable.</p>
+      </div>
+      <div class="pivot-visual rv d1">
+        <div class="pv-label">The pivot — what changed and why</div>
+        <div class="pv-from">
+          <div class="pv-title">W3-Energy.org — the MVP</div>
+          <div class="pv-body">Cross-border renewable energy finance platform · Blockchain architecture · Built and tested · Proof of concept validated · Regulatory complexity unresolved</div>
+        </div>
+        <div class="pv-arrow">↓</div>
+        <div style="padding:.5rem 0;font-size:.68rem;color:rgba(255,255,255,.28);font-family:var(--S);text-align:center">Surrey Business School evaluation · Expert advisory review</div>
+        <div class="pv-arrow">↓</div>
+        <div class="pv-to">
+          <div class="pv-title">VERSPA — the platform</div>
+          <div class="pv-body" style="color:rgba(255,255,255,.6)">Same problem · Regulated platform architecture · FCA authorisation pathway · Six-pillar ecosystem · B2B API infrastructure · Diaspora capital rails · London-headquartered</div>
+        </div>
+        <div class="pv-advisor"><strong>What changed:</strong> blockchain removed, regulated infrastructure added, FCA pathway initiated, diaspora rails built in, B2B API layer designed. The core thesis — cross-border renewable energy finance infrastructure — remains unchanged.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section id="whynow">
+  <div class="container">
+    <div class="rv"><span class="label">Why now</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">The conditions have<br><span class="it">never been better.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:560px">VERSPA is not early to a market that doesn't exist yet. It is entering at the precise moment when regulatory maturity, policy alignment, technology convergence and market need all point in the same direction.</p>
+    <div class="whynow-grid">
+      <div class="wn-card rv d1"><div class="wn-num">01</div><div class="wn-title">Regulatory maturity</div><div class="wn-body">The FCA crowdfunding framework is now mature and well-understood. ECSP passporting opens EU markets. The regulatory environment is ready for a cross-border platform in a way it was not three years ago.</div></div>
+      <div class="wn-card rv d2"><div class="wn-num">02</div><div class="wn-title">Policy alignment</div><div class="wn-body">The UK has legally binding net-zero 2050 commitments and a government actively seeking private capital solutions for the energy transition. VERSPA is the infrastructure for this capital flow — aligned with HM Government priorities.</div></div>
+      <div class="wn-card rv d3"><div class="wn-num">03</div><div class="wn-title">AI &amp; fintech convergence</div><div class="wn-body">The availability of AI tools for automated deal scoring, compliance gap analysis and grant identification makes VERSPA Intelligence buildable at startup cost — not enterprise cost. The technology moment is now.</div></div>
+      <div class="wn-card rv d1"><div class="wn-num">04</div><div class="wn-title">Market size</div><div class="wn-body">The global renewable energy crowdfunding market reached $352M in 2024 and is projected to reach $1.67B by 2033 at 18.2% CAGR. VERSPA enters at the early growth stage — maximum opportunity, minimum competition.</div></div>
+      <div class="wn-card rv d2"><div class="wn-num">05</div><div class="wn-title">Diaspora finance moment</div><div class="wn-body">UK government development finance priorities, the UK-Africa Investment Summit agenda and growing awareness of diaspora remittance inefficiency all create a policy tailwind for VERSPA's geography-linked investment rails.</div></div>
+      <div class="wn-card rv d3"><div class="wn-num">06</div><div class="wn-title">Prior execution</div><div class="wn-body">W3-Energy.org demonstrates that the founder has already built and tested a version of this platform. The pivot to VERSPA is evidence-based — the kind of market-responsive decision that investors and endorsing bodies value.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT CTA -->
+<section id="connect" style="padding:7rem 0">
+  <div class="container">
+    <div class="connect-inner">
+      <div class="connect-text">
+        <div class="rv"><span class="label" style="color:rgba(255,255,255,.3)">Get in touch</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">Talk to the<br><span class="it">founding team.</span></h2>
+        <p class="rv d2">Whether you are a renewable energy developer, an investor, an institution or an advisor — we want to hear from you. VERSPA is being built with input from the people it will serve.</p>
+      </div>
+      <div class="connect-actions rv d1">
+        <a href="book-a-call.html" class="ca">
+          <div class="ca-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+          <div>
+            <div class="ca-title">Book a Discovery Call</div>
+            <div class="ca-sub">30 minutes · Free · No obligation · Book online</div>
+          </div>
+        </a>
+        <a href="contact.html" class="ca">
+          <div class="ca-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="ca-title">Send a Message</div>
+            <div class="ca-sub">General enquiries · Press · Partnership · Advisory</div>
+          </div>
+        </a>
+        <a href="launchpad.html#apply" class="ca">
+          <div class="ca-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+          <div>
+            <div class="ca-title">Apply to the Launchpad</div>
+            <div class="ca-sub">Project developers · 12-week investment readiness programme</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div>
+        <a href="index.html" class="fb-logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a>
+        <div class="fb-tag">The global infrastructure layer for renewable energy finance. Democratising clean energy investment. Connecting capital to climate.</div>
+        <div class="fsoc"><a href="#" class="fsb">in</a><a href="#" class="fsb">𝕏</a></div>
+      </div>
+      <div class="fcol"><h5>Services</h5><a href="launchpad.html">The Launchpad</a><a href="for-project-owners.html">For Project Owners</a><a href="for-funding-partners.html">For Funding Partners</a><a href="book-a-call.html">Book a Discovery Call</a><a href="apply.html">Apply / Get Started</a></div>
+      <div class="fcol"><h5>Company</h5><a href="about.html">About VERSPA</a><a href="regulatory-status.html">Regulatory Status</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h5>Legal</h5><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="cookie-policy.html">Cookie Policy</a><a href="disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="fbot">
+      <span class="fcopy">© 2026 VERSPA Ltd. London, United Kingdom. verspa.co.uk</span>
+      <div class="flegal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Risk Warning</a><a href="cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <p class="fca-note">VERSPA is in the process of seeking FCA authorisation as a crowdfunding platform operator. Prior to authorisation, VERSPA provides advisory and deal structuring services only and does not facilitate investment transactions. VERSPA Ltd is registered in England and Wales. This website does not constitute financial advice. Capital is at risk.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('up',scrollY>10),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
