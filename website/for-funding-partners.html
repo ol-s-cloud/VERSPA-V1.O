@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSPA — For Funding Partners &amp; Investors</title>
+<meta name="description" content="Invest in renewable energy from £10 or as an institution. Access UK, EU and EMEA projects previously restricted to large funds. Register your interest today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0C0E;
+  --ink-70:rgba(11,12,14,.7);
+  --ink-40:rgba(11,12,14,.4);
+  --ink-12:rgba(11,12,14,.08);
+  --white:#FFFFFF;
+  --off:#F7F6F2;
+  --teal:#0A6648;
+  --teal-bright:#13996B;
+  --teal-pale:#EAF4EF;
+  --border:#E3E1DA;
+  --F:'Libre Baskerville',Georgia,serif;
+  --S:'Plus Jakarta Sans',system-ui,sans-serif;
+  --M:'Space Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--S);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--teal);color:#fff}
+h1{font-family:var(--F);font-size:clamp(3rem,5.5vw,6rem);font-weight:700;line-height:.97;letter-spacing:-.025em}
+h2{font-family:var(--F);font-size:clamp(2.2rem,3.8vw,4rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+h3{font-family:var(--F);font-size:clamp(1.3rem,2vw,1.9rem);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+.it{font-style:italic;color:var(--teal)}
+.label{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+p{font-size:1.05rem;font-weight:300;line-height:1.78;color:var(--ink-70)}
+p.lg{font-size:1.15rem;line-height:1.75}
+p.sm{font-size:.88rem;line-height:1.72}
+.container{max-width:1320px;margin:0 auto;padding:0 5vw}
+section{padding:7rem 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--S);font-size:.85rem;font-weight:700;letter-spacing:.01em;padding:.9rem 2rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none;border:none;white-space:nowrap}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--teal);transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,102,72,.25)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-bright);transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,102,72,.3)}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:900;height:66px;transition:all .3s}
+nav.up{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1320px;margin:0 auto;padding:0 5vw}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.lm{width:34px;height:34px;background:var(--ink);border-radius:5px;display:grid;place-items:center}
+.lm svg{width:20px;height:20px}
+.ln{font-family:var(--S);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.nl{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nl a{font-size:.82rem;font-weight:500;color:var(--ink-70);text-decoration:none;transition:color .15s}
+.nl a:hover,.nl a.active{color:var(--ink)}
+.na{display:flex;gap:.6rem}
+
+/* HERO */
+.page-hero{padding:9rem 0 0;background:var(--white)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;padding-bottom:5rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--teal-pale);border:1px solid rgba(10,102,72,.2);padding:.4rem 1rem .4rem .7rem;border-radius:100px;margin-bottom:2rem}
+.badge-dot{width:7px;height:7px;background:var(--teal-bright);border-radius:50%;animation:blink 2s infinite}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.25rem}
+
+/* INVESTOR TYPES VISUAL */
+.inv-card{background:var(--ink);border-radius:16px;overflow:hidden}
+.inv-header{background:#0F1016;padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.inv-title{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);font-family:var(--S)}
+.inv-body{padding:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.inv-type{display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px}
+.inv-type.featured{background:rgba(10,102,72,.15);border-color:rgba(10,102,72,.35)}
+.inv-icon{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0}
+.inv-icon svg{width:17px;height:17px;stroke:rgba(255,255,255,.6);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.inv-type.featured .inv-icon{background:rgba(19,153,107,.2)}
+.inv-type.featured .inv-icon svg{stroke:var(--teal-bright)}
+.inv-name{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82);font-family:var(--S);flex:1}
+.inv-range{font-size:.65rem;font-family:var(--M);color:rgba(255,255,255,.32)}
+.inv-type.featured .inv-range{color:var(--teal-bright)}
+.inv-footer{padding:.85rem 1.25rem;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between}
+.inv-total{font-family:var(--F);font-size:1.4rem;font-weight:700;color:#fff}
+.inv-total span{color:var(--teal-bright)}
+.inv-total-label{font-size:.65rem;color:rgba(255,255,255,.28);font-family:var(--S)}
+
+/* TWO TRACKS */
+#tracks{background:var(--off)}
+.tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.track{background:var(--white);padding:3.5rem 3rem;position:relative}
+.track-bar{position:absolute;top:0;left:0;right:0;height:3px}
+.track:first-child .track-bar{background:var(--teal)}
+.track:last-child .track-bar{background:var(--ink)}
+.track-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:1.5rem;font-family:var(--S)}
+.track:first-child .track-tag{background:var(--teal-pale);color:var(--teal)}
+.track:last-child .track-tag{background:var(--ink-12);color:var(--ink)}
+.track h3{margin-bottom:.85rem}
+.track-items{display:flex;flex-direction:column;gap:.6rem;margin-top:1.5rem}
+.ti{font-size:.88rem;color:var(--ink-70);display:flex;align-items:flex-start;gap:.6rem;line-height:1.55}
+.ti::before{content:'→';color:var(--teal);font-weight:700;flex-shrink:0;font-size:.82rem;margin-top:1px}
+.track-cta{margin-top:2rem}
+
+/* GEOGRAPHY */
+#geography{background:var(--white)}
+.geo-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.geo-visual{background:var(--ink);border-radius:16px;overflow:hidden}
+.geo-header{background:#0F1016;padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.geo-title{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);font-family:var(--S)}
+.geo-body{padding:1.25rem;display:flex;flex-direction:column;gap:.55rem}
+.geo-row{display:flex;align-items:center;gap:.85rem;padding:.8rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px}
+.geo-flag{font-size:1.2rem;width:30px;text-align:center;flex-shrink:0}
+.geo-info{flex:1}
+.geo-country{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.82);font-family:var(--S)}
+.geo-type{font-size:.63rem;color:rgba(255,255,255,.3);font-family:var(--S);margin-top:.1rem}
+.geo-status{font-size:.6rem;font-weight:700;font-family:var(--M);padding:.2rem .55rem;border-radius:4px;white-space:nowrap}
+.geo-status.open{color:var(--teal-bright);background:rgba(19,153,107,.12)}
+.geo-status.soon{color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
+.geo-footer{padding:.75rem 1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.65rem;color:rgba(255,255,255,.25);font-family:var(--S)}
+
+/* RETURNS */
+#returns{background:var(--off)}
+.returns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.ret-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:2rem;transition:all .2s}
+.ret-card:hover{border-color:var(--teal);transform:translateY(-3px)}
+.ret-tag{display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--teal-pale);color:var(--teal);padding:.25rem .65rem;border-radius:4px;margin-bottom:1.25rem;font-family:var(--S)}
+.ret-range{font-family:var(--F);font-size:2.4rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:.25rem}
+.ret-range span{color:var(--teal)}
+.ret-type{font-size:.78rem;font-weight:600;color:var(--ink);margin-bottom:.5rem;font-family:var(--S)}
+.ret-body{font-size:.83rem;color:var(--ink-70);line-height:1.65}
+.risk-note{margin-top:3rem;padding:1.5rem 2rem;background:var(--off);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--teal)}
+.risk-note p{font-size:.82rem;color:var(--ink-70);line-height:1.65}
+
+/* STATS */
+.stats-band{background:var(--ink);padding:5rem 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07)}
+.stat-c{background:var(--ink);padding:3rem 2.5rem}
+.stat-big{font-family:var(--F);font-size:3.8rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.4rem}
+.stat-big span{color:var(--teal-bright)}
+.stat-label{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.55;max-width:180px}
+
+/* FORM */
+#register{background:var(--off)}
+.register-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.register-left h2{margin-bottom:1.25rem}
+.register-left p{margin-bottom:1.5rem}
+.why-register{display:flex;flex-direction:column;gap:.85rem;margin-top:2rem}
+.wr{display:flex;align-items:flex-start;gap:.85rem;padding:1rem 1.25rem;background:var(--white);border:1px solid var(--border);border-radius:8px}
+.wr-check{width:20px;height:20px;border-radius:50%;background:var(--teal-pale);display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+.wr-check svg{width:10px;height:10px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.wr-text{font-size:.84rem;color:var(--ink-70);line-height:1.55}
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.5rem;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.form-title{font-family:var(--S);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
+.form-sub{font-size:.82rem;color:var(--ink-40);margin-bottom:2rem}
+.form{display:flex;flex-direction:column;gap:1rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.ff{display:flex;flex-direction:column;gap:.35rem}
+.ff label{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);font-family:var(--S)}
+.ff input,.ff select,.ff textarea{background:var(--off);border:1.5px solid var(--border);border-radius:6px;color:var(--ink);font-family:var(--S);font-size:.92rem;padding:.8rem 1rem;outline:none;transition:border .18s;width:100%;appearance:none;resize:vertical}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--ink);background:#fff}
+.ff input::placeholder,.ff textarea::placeholder{color:var(--ink-40)}
+.radio-group{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.15rem}
+.radio-opt{display:flex;align-items:center;gap:.4rem;cursor:pointer}
+.radio-opt input{width:16px;height:16px;cursor:pointer;accent-color:var(--teal)}
+.radio-opt span{font-size:.85rem;color:var(--ink-70)}
+.fsub{background:var(--ink);color:#fff;border:none;border-radius:6px;padding:1.05rem;font-family:var(--S);font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s;margin-top:.25rem}
+.fsub:hover{background:var(--teal)}
+.fnote{font-size:.76rem;color:var(--ink-40);text-align:center;margin-top:.5rem}
+.success{display:none;text-align:center;padding:2.5rem 1rem}
+.success.on{display:block}
+.s-tick{font-family:var(--F);font-size:3rem;color:var(--teal);margin-bottom:.75rem}
+.s-title{font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;font-family:var(--S)}
+.s-body{font-size:.87rem;color:var(--ink-70);line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--off);border-top:1px solid var(--border);padding:5rem 0 2.5rem}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.fb-logo{display:flex;align-items:center;gap:.45rem;text-decoration:none;margin-bottom:1.1rem}
+.fb-tag{font-size:.87rem;color:var(--ink-70);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.5rem}
+.fsb{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink-40);text-decoration:none;transition:all .15s;font-family:var(--S)}
+.fsb:hover{border-color:var(--teal);color:var(--teal)}
+.fcol h5{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;font-family:var(--S)}
+.fcol a{display:block;font-size:.87rem;color:var(--ink-70);text-decoration:none;margin-bottom:.6rem;transition:color .15s}
+.fcol a:hover{color:var(--teal)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.8rem;color:var(--ink-40)}
+.flegal{display:flex;gap:1.5rem}
+.flegal a{font-size:.78rem;color:var(--ink-40);text-decoration:none;transition:color .15s}
+.flegal a:hover{color:var(--ink-70)}
+.fca-note{font-size:.72rem;color:var(--ink-40);line-height:1.65;margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border);max-width:700px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+@media(max-width:1100px){
+  .hero-inner,.tracks-grid,.geo-layout,.register-wrap{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr;gap:2rem}
+  .stats-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  h1{font-size:2.6rem}h2{font-size:1.9rem}
+  nav .nl,.na .btn-line{display:none}
+  .ni{padding:0 1.25rem}
+  section{padding:5rem 0}
+  .container{padding:0 1.25rem}
+  .returns-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .fbot{flex-direction:column;align-items:flex-start}
+  .frow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo">
+      <div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="ln">VERSPA</span>
+    </a>
+    <ul class="nl">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="launchpad.html">Launchpad</a></li>
+      <li><a href="for-project-owners.html">For Developers</a></li>
+      <li><a href="for-funding-partners.html" class="active">For Investors</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="na">
+      <a href="book-a-call.html" class="btn btn-line" style="font-size:.8rem;padding:.6rem 1.1rem">Book a Call</a>
+      <a href="#register" class="btn btn-dark" style="font-size:.8rem;padding:.6rem 1.25rem">Register Interest</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge rv">
+          <div class="badge-dot"></div>
+          <span class="label" style="letter-spacing:.08em">Registering interest now</span>
+        </div>
+        <h1 class="rv d1">Invest in the<br>energy transition.<br><span class="it">From £10.</span></h1>
+        <p class="lg rv d2" style="margin-top:1.5rem;max-width:500px">VERSPA gives every investor — retail, diaspora, institutional — access to regulated renewable energy projects across UK, EU and EMEA. Projects previously accessible only to large institutions. Now open to all.</p>
+        <div class="hero-btns rv d2">
+          <a href="#register" class="btn btn-dark">Register Your Interest</a>
+          <a href="book-a-call.html" class="btn btn-line">Book a Discovery Call</a>
+        </div>
+      </div>
+
+      <!-- INVESTOR TYPES VISUAL -->
+      <div class="inv-card rv d1">
+        <div class="inv-header">
+          <div class="inv-title">Who invests through VERSPA</div>
+        </div>
+        <div class="inv-body">
+          <div class="inv-type">
+            <div class="inv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <div class="inv-name">Retail investor</div>
+            <div class="inv-range">From £10</div>
+          </div>
+          <div class="inv-type featured">
+            <div class="inv-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="inv-name">Geography-linked investor</div>
+            <div class="inv-range">From £10</div>
+          </div>
+          <div class="inv-type">
+            <div class="inv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div class="inv-name">Family office</div>
+            <div class="inv-range">£50k–£250k+</div>
+          </div>
+          <div class="inv-type">
+            <div class="inv-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div class="inv-name">Institutional investor / DFI</div>
+            <div class="inv-range">Bespoke</div>
+          </div>
+          <div class="inv-type">
+            <div class="inv-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div class="inv-name">Impact fund</div>
+            <div class="inv-range">Bespoke</div>
+          </div>
+        </div>
+        <div class="inv-footer">
+          <div>
+            <div class="inv-total">£20<span>bn+</span></div>
+            <div class="inv-total-label">UK geography-linked capital currently going to consumption</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TWO TRACKS -->
+<section id="tracks">
+  <div class="container">
+    <div class="rv"><span class="label">How you invest</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">Two tracks.<br><span class="it">One platform.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:560px">Whether you are investing £10 or £10 million, as an individual or an institution, VERSPA has a track designed for you. Both tracks access the same curated pipeline of vetted renewable energy projects.</p>
+    <div class="tracks-grid">
+      <div class="track rv d1">
+        <div class="track-bar"></div>
+        <div class="track-tag">Retail &amp; individual investors</div>
+        <h3>Accessible investing.<br><span class="it">From £10.</span></h3>
+        <p style="margin-top:.85rem">Invest in renewable energy projects that were previously restricted to large institutions — from as little as £10. Full transparency on returns, risk and CO₂ impact. FCA-regulated environment throughout.</p>
+        <div class="track-items">
+          <div class="ti">Minimum investment £10 — the same projects institutions access</div>
+          <div class="ti">Debt instruments with fixed target returns of 5–7% annually</div>
+          <div class="ti">Equity instruments with variable returns and higher upside potential</div>
+          <div class="ti">Real-time CO₂ impact dashboard — see your energy project generating power</div>
+          <div class="ti">Geography-linked opportunities — invest in projects in countries you have a personal connection to</div>
+          <div class="ti">EIS/SEIS tax wrapper guidance for eligible UK investors</div>
+        </div>
+        <div class="track-cta">
+          <a href="#register" class="btn btn-dark">Register as an investor</a>
+        </div>
+      </div>
+      <div class="track rv d2">
+        <div class="track-bar"></div>
+        <div class="track-tag">Institutional &amp; DFI investors</div>
+        <h3>Institutional access.<br><span class="it">Structured instruments.</span></h3>
+        <p style="margin-top:.85rem">Co-invest alongside retail on vetted projects or access bespoke structured instruments. Curated deal flow across UK, EU and EMEA. Built-in ESG reporting. Efficient cross-border capital deployment.</p>
+        <div class="track-items">
+          <div class="ti">Debt, equity and mezzanine instruments available</div>
+          <div class="ti">Co-investment alongside retail capital on the same projects</div>
+          <div class="ti">Bespoke structuring for larger commitments (£250k+)</div>
+          <div class="ti">Built-in ESG reporting and impact metrics</div>
+          <div class="ti">Cross-border deal flow across UK, EU, West Africa, East Africa and MENA</div>
+          <div class="ti">Dedicated relationship management for institutional partners</div>
+        </div>
+        <div class="track-cta">
+          <a href="book-a-call.html" class="btn btn-dark">Book an institutional call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEOGRAPHY -->
+<section id="geography">
+  <div class="container">
+    <div class="geo-layout">
+      <div class="geo-visual rv d1">
+        <div class="geo-header">
+          <div class="geo-title">Project pipeline — geographic coverage</div>
+        </div>
+        <div class="geo-body">
+          <div class="geo-row"><div class="geo-flag">🇬🇧</div><div class="geo-info"><div class="geo-country">United Kingdom</div><div class="geo-type">Offshore wind, onshore wind, solar, storage</div></div><div class="geo-status open">Open</div></div>
+          <div class="geo-row"><div class="geo-flag">🇳🇬</div><div class="geo-info"><div class="geo-country">Nigeria</div><div class="geo-type">Solar parks, wind — £3.8bn remittance corridor</div></div><div class="geo-status open">Q2 2026</div></div>
+          <div class="geo-row"><div class="geo-flag">🇬🇭</div><div class="geo-info"><div class="geo-country">Ghana</div><div class="geo-type">Solar parks — active Launchpad pipeline</div></div><div class="geo-status open">Q2 2026</div></div>
+          <div class="geo-row"><div class="geo-flag">🇰🇪</div><div class="geo-info"><div class="geo-country">Kenya</div><div class="geo-type">Hydro and wind — IFC partnership track</div></div><div class="geo-status open">Q3 2026</div></div>
+          <div class="geo-row"><div class="geo-flag">🇪🇺</div><div class="geo-info"><div class="geo-country">European Union</div><div class="geo-type">Cross-border wind and solar — ECSP passport</div></div><div class="geo-status soon">Year 2</div></div>
+          <div class="geo-row"><div class="geo-flag">🇦🇪</div><div class="geo-info"><div class="geo-country">UAE / MENA</div><div class="geo-type">Solar infrastructure — B2B API pathway</div></div><div class="geo-status soon">Year 3</div></div>
+        </div>
+        <div class="geo-footer">Register your geography preference and we will notify you when matching projects become available</div>
+      </div>
+      <div>
+        <div class="rv"><span class="label">Where we invest</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">UK, EU and EMEA.<br><span class="it">One platform.</span></h2>
+        <p class="lg rv d2" style="margin-top:1.25rem">VERSPA is built for cross-border renewable energy investment. Whether you want to invest in UK offshore wind, West African solar or East African hydro — VERSPA is the single regulated platform that connects you to the right project.</p>
+        <p class="rv d2" style="margin-top:1rem">For investors with a personal connection to a specific country or region — whether through family, heritage or business — VERSPA offers geography-linked investment opportunities. Invest in the energy transition in the places that matter to you.</p>
+        <div style="margin-top:2.5rem;display:flex;gap:.75rem;flex-wrap:wrap" class="rv d3">
+          <a href="#register" class="btn btn-dark">Register your interest</a>
+          <a href="regulatory-status.html" class="btn btn-line">Our regulatory status</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURNS -->
+<section id="returns">
+  <div class="container">
+    <div class="rv"><span class="label">Target returns</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">Financial returns.<br><span class="it">Real-world impact.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:560px">VERSPA targets competitive returns across all investment instruments — while every pound invested directly funds renewable energy generation and CO₂ reduction. You do not have to choose between returns and impact.</p>
+    <div class="returns-grid">
+      <div class="ret-card rv d1">
+        <div class="ret-tag">Debt instruments</div>
+        <div class="ret-range">5–7<span>%</span></div>
+        <div class="ret-type">Target annual return</div>
+        <div class="ret-body">Fixed target return paid periodically. Capital returned at maturity. Lower risk profile. Suitable for retail investors seeking predictable income from renewable energy projects.</div>
+      </div>
+      <div class="ret-card rv d2">
+        <div class="ret-tag">Equity instruments</div>
+        <div class="ret-range">7–9<span>%+</span></div>
+        <div class="ret-type">Target annual return</div>
+        <div class="ret-body">Variable return with higher upside potential. Investors participate in project revenues. Higher risk and reward profile. Suitable for investors with longer time horizons and higher risk appetite.</div>
+      </div>
+      <div class="ret-card rv d3">
+        <div class="ret-tag">Blended finance</div>
+        <div class="ret-range">6–8<span>%</span></div>
+        <div class="ret-type">Target annual return</div>
+        <div class="ret-body">Combination of debt and equity components, often with grant funding stacked alongside. Available on selected projects. Suitable for institutional and impact-focused investors seeking structured exposure.</div>
+      </div>
+    </div>
+    <div class="risk-note rv d2">
+      <p>All investments carry risk, including the risk of capital loss. Target returns are not guaranteed and are based on comparable platforms — including Enerfip, which has delivered an average net IRR of approximately 6.3% — and are not indicative of future performance on VERSPA. Investments in renewable energy projects are illiquid and typically long-duration. VERSPA is in the process of seeking FCA authorisation. Prior to authorisation, VERSPA does not facilitate investment transactions. Please read our <a href="disclaimer.html" style="color:var(--teal);font-weight:600">full disclaimer</a> and <a href="regulatory-status.html" style="color:var(--teal);font-weight:600">regulatory status</a> before registering.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-c rv"><div class="stat-big">£10</div><div class="stat-label">Minimum investment — same projects institutions access, open to everyone</div></div>
+      <div class="stat-c rv d1"><div class="stat-big">$1.67<span>B</span></div><div class="stat-label">Global renewable energy crowdfunding market by 2033 growing at 18.2% CAGR</div></div>
+      <div class="stat-c rv d2"><div class="stat-big">5–9<span>%</span></div><div class="stat-label">Target annual returns depending on instrument and project type</div></div>
+      <div class="stat-c rv d3"><div class="stat-big">0</div><div class="stat-label">Other platforms combining retail access, geography-linked opportunities and institutional co-investment</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTRATION FORM -->
+<section id="register">
+  <div class="container">
+    <div class="register-wrap">
+      <div class="register-left">
+        <div class="rv"><span class="label">Register your interest</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">Be first to<br><span class="it">invest.</span></h2>
+        <p class="rv d2" style="margin-top:1.25rem">The VERSPA Capital Marketplace launches following FCA authorisation. Register your interest now and you will be among the first investors to access projects when the platform goes live.</p>
+        <div class="why-register rv d2">
+          <div class="wr"><div class="wr-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div><div class="wr-text">First access to projects before the platform opens to the public</div></div>
+          <div class="wr"><div class="wr-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div><div class="wr-text">Regular updates on platform progress, regulatory status and project pipeline</div></div>
+          <div class="wr"><div class="wr-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div><div class="wr-text">Geography-matched project alerts — notified when projects matching your preference are listed</div></div>
+          <div class="wr"><div class="wr-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div><div class="wr-text">Direct access to the founding team for questions and institutional discussions</div></div>
+        </div>
+      </div>
+      <div class="rv d1">
+        <div class="form-card">
+          <div class="form-title">Investor registration</div>
+          <div class="form-sub">Takes less than 2 minutes · No commitment required</div>
+          <div id="form-wrap">
+            <!-- HUBSPOT FORM EMBED -->
+            <!-- Replace this form with your HubSpot embed code -->
+            <!-- HubSpot form: VERSPA — Funding Partner Interest -->
+            <!-- Portal ID: [ADD YOUR PORTAL ID] -->
+            <!-- Form ID: [ADD YOUR FORM ID] -->
+            <form class="form" onsubmit="submitForm(event)">
+              <div class="frow">
+                <div class="ff"><label>Full name <span style="color:var(--teal)">*</span></label><input type="text" placeholder="Your full name" required></div>
+                <div class="ff"><label>Email address <span style="color:var(--teal)">*</span></label><input type="email" placeholder="you@example.com" required></div>
+              </div>
+              <div class="ff">
+                <label>Investor type <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select type</option>
+                  <option>Retail individual</option>
+                  <option>Family office</option>
+                  <option>Institutional investor</option>
+                  <option>DFI (Development Finance Institution)</option>
+                  <option>Impact fund</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Investment range <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select range</option>
+                  <option>£10 – £1,000</option>
+                  <option>£1,000 – £10,000</option>
+                  <option>£10,000 – £50,000</option>
+                  <option>£50,000 – £250,000</option>
+                  <option>£250,000+</option>
+                  <option>Institutional (bespoke)</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Primary geography of interest <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select geography</option>
+                  <option>United Kingdom</option>
+                  <option>West Africa (Nigeria, Ghana, Senegal)</option>
+                  <option>East Africa (Kenya, Tanzania, Rwanda)</option>
+                  <option>MENA (UAE, Saudi Arabia, Egypt)</option>
+                  <option>European Union</option>
+                  <option>All regions — open to any</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Do you have a personal connection to a specific country or region you want to invest in? <span style="color:var(--teal)">*</span></label>
+                <div class="radio-group">
+                  <label class="radio-opt"><input type="radio" name="geo_link" value="yes" required><span>Yes</span></label>
+                  <label class="radio-opt"><input type="radio" name="geo_link" value="no"><span>No</span></label>
+                </div>
+              </div>
+              <div class="ff">
+                <label>Country of residence <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select country</option>
+                  <option>United Kingdom</option>
+                  <option>Nigeria</option>
+                  <option>Ghana</option>
+                  <option>Kenya</option>
+                  <option>South Africa</option>
+                  <option>UAE</option>
+                  <option>Saudi Arabia</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Have you invested in private markets or alternatives before? <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select</option>
+                  <option>Yes — I have experience with alternative investments</option>
+                  <option>No — this would be my first alternative investment</option>
+                  <option>Looking to start — exploring my options</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Any specific sectors or countries of focus? <span style="color:var(--ink-40);font-weight:400">(optional)</span></label>
+                <textarea placeholder="e.g. Kenyan hydro projects, UK offshore wind, Nigerian solar..."></textarea>
+              </div>
+              <button type="submit" class="fsub">Register Interest →</button>
+              <div class="fnote">No spam. No commitment. You will be first to know when projects match your profile.</div>
+            </form>
+            <div class="success" id="form-success">
+              <div class="s-tick">✓</div>
+              <div class="s-title">Interest registered.</div>
+              <div class="s-body">Thank you for registering with VERSPA. You will be among the first investors to access the platform when we launch. We will keep you updated on regulatory progress and project pipeline. In the meantime, please read our <a href="regulatory-status.html" style="color:var(--teal);font-weight:600">regulatory status page</a> to understand what VERSPA can and cannot currently do.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div>
+        <a href="index.html" class="fb-logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a>
+        <div class="fb-tag">The global infrastructure layer for renewable energy finance. Democratising clean energy investment. Connecting capital to climate.</div>
+        <div class="fsoc"><a href="#" class="fsb">in</a><a href="#" class="fsb">𝕏</a></div>
+      </div>
+      <div class="fcol">
+        <h5>Services</h5>
+        <a href="launchpad.html">The Launchpad</a>
+        <a href="for-project-owners.html">For Project Owners</a>
+        <a href="for-funding-partners.html">For Funding Partners</a>
+        <a href="book-a-call.html">Book a Discovery Call</a>
+        <a href="apply.html">Apply / Get Started</a>
+      </div>
+      <div class="fcol">
+        <h5>Company</h5>
+        <a href="about.html">About VERSPA</a>
+        <a href="regulatory-status.html">Regulatory Status</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Legal</h5>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span class="fcopy">© 2026 VERSPA Ltd. London, United Kingdom. verspa.co.uk</span>
+      <div class="flegal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Risk Warning</a><a href="cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <p class="fca-note">VERSPA is in the process of seeking FCA authorisation as a crowdfunding platform operator. Prior to authorisation, VERSPA provides advisory and deal structuring services only and does not facilitate investment transactions. Investments in renewable energy projects carry risk, including the risk of capital loss. Target returns are not guaranteed. VERSPA Ltd is registered in England and Wales. This website does not constitute financial advice. Capital is at risk.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('up',scrollY>10),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function submitForm(e){
+  e.preventDefault();
+  e.target.style.display='none';
+  document.getElementById('form-success').classList.add('on');
+}
+</script>
+</body>
+</html>
