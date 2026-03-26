@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSPA Launchpad — 12-Week Investment Readiness Programme</title>
+<meta name="description" content="The VERSPA Launchpad takes your renewable energy project from raw concept to investment-ready in 12 weeks. Grant advisory, deal structuring, CFR production and compliance — live now, no FCA licence required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0C0E;
+  --ink-70:rgba(11,12,14,.7);
+  --ink-40:rgba(11,12,14,.4);
+  --ink-12:rgba(11,12,14,.08);
+  --white:#FFFFFF;
+  --off:#F7F6F2;
+  --teal:#0A6648;
+  --teal-bright:#13996B;
+  --teal-pale:#EAF4EF;
+  --border:#E3E1DA;
+  --F:'Libre Baskerville',Georgia,serif;
+  --S:'Plus Jakarta Sans',system-ui,sans-serif;
+  --M:'Space Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--S);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--teal);color:#fff}
+h1{font-family:var(--F);font-size:clamp(3rem,5.5vw,6rem);font-weight:700;line-height:.97;letter-spacing:-.025em}
+h2{font-family:var(--F);font-size:clamp(2.2rem,3.8vw,4rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+h3{font-family:var(--F);font-size:clamp(1.3rem,2vw,1.9rem);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+.it{font-style:italic;color:var(--teal)}
+.label{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+p{font-size:1.05rem;font-weight:300;line-height:1.78;color:var(--ink-70)}
+p.lg{font-size:1.15rem;line-height:1.75}
+p.sm{font-size:.88rem;line-height:1.72}
+.container{max-width:1320px;margin:0 auto;padding:0 5vw}
+section{padding:7rem 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--S);font-size:.85rem;font-weight:700;letter-spacing:.01em;padding:.9rem 2rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none;border:none;white-space:nowrap}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--teal);transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,102,72,.25)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-bright);transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,102,72,.3)}
+
+/* NAV — identical to index.html */
+nav{position:fixed;inset:0 0 auto;z-index:900;height:66px;transition:all .3s}
+nav.up{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1320px;margin:0 auto;padding:0 5vw}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.lm{width:34px;height:34px;background:var(--ink);border-radius:5px;display:grid;place-items:center}
+.lm svg{width:20px;height:20px}
+.ln{font-family:var(--S);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.nl{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nl a{font-size:.82rem;font-weight:500;color:var(--ink-70);text-decoration:none;transition:color .15s}
+.nl a:hover{color:var(--ink)}
+.na{display:flex;gap:.6rem}
+
+/* PAGE HERO */
+.page-hero{padding:9rem 0 6rem;background:var(--white)}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--teal-pale);border:1px solid rgba(10,102,72,.2);padding:.4rem 1rem .4rem .7rem;border-radius:100px;margin-bottom:2rem}
+.badge-dot{width:7px;height:7px;background:var(--teal-bright);border-radius:50%;animation:blink 2s infinite}
+.page-hero h1{max-width:820px;margin-bottom:1.75rem}
+.page-hero p.lg{max-width:600px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-top:none}
+.hs{background:var(--off);padding:2rem 2.5rem}
+.hs-val{font-family:var(--F);font-size:2.8rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:.25rem}
+.hs-val span{color:var(--teal)}
+.hs-label{font-size:.8rem;color:var(--ink-40);line-height:1.5}
+
+/* WHAT IS IT */
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.what-visual{background:var(--ink);border-radius:16px;padding:3rem;display:flex;flex-direction:column;gap:1.25rem}
+.wv-label{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);font-family:var(--S)}
+.wv-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.wv-num{font-family:var(--M);font-size:.7rem;color:var(--teal-bright);width:28px;flex-shrink:0}
+.wv-title{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.85);font-family:var(--S)}
+.wv-sub{font-size:.72rem;color:rgba(255,255,255,.35);font-family:var(--S);margin-top:.15rem}
+.wv-week{font-family:var(--M);font-size:.65rem;color:rgba(255,255,255,.25);margin-left:auto;flex-shrink:0}
+
+/* PHASES */
+#phases{background:var(--off)}
+.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.phase{background:var(--white);padding:3rem 2.5rem;position:relative;overflow:hidden}
+.phase-num{font-family:var(--F);font-size:5rem;font-weight:700;color:rgba(11,12,14,.04);line-height:1;position:absolute;top:1.5rem;right:2rem;user-select:none}
+.phase-bar{position:absolute;top:0;left:0;right:0;height:3px}
+.phase:nth-child(1) .phase-bar{background:var(--teal)}
+.phase:nth-child(2) .phase-bar{background:var(--ink)}
+.phase:nth-child(3) .phase-bar{background:var(--teal-bright)}
+.phase-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:1.25rem;font-family:var(--S)}
+.phase:nth-child(1) .phase-tag{background:var(--teal-pale);color:var(--teal)}
+.phase:nth-child(2) .phase-tag{background:var(--ink-12);color:var(--ink)}
+.phase:nth-child(3) .phase-tag{background:#E8F5EC;color:#166534}
+.phase h3{margin-bottom:.85rem}
+.phase-weeks{font-family:var(--M);font-size:.68rem;color:var(--ink-40);margin-bottom:1rem;letter-spacing:.04em}
+.phase-items{display:flex;flex-direction:column;gap:.5rem;margin-top:1.25rem}
+.phase-item{font-size:.85rem;color:var(--ink-70);padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:.6rem}
+.phase-item:last-child{border-bottom:none}
+.phase-item::before{content:'→';color:var(--teal);font-family:var(--S);font-weight:600;flex-shrink:0;font-size:.8rem;margin-top:1px}
+
+/* WHAT YOU GET */
+#deliverables{background:var(--white)}
+.del-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.del-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:2rem;transition:all .2s}
+.del-card:hover{border-color:var(--teal);transform:translateY(-3px)}
+.del-icon{width:44px;height:44px;border-radius:10px;background:var(--teal-pale);display:grid;place-items:center;margin-bottom:1.25rem}
+.del-icon svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.del-title{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;font-family:var(--S)}
+.del-body{font-size:.84rem;color:var(--ink-70);line-height:1.7}
+
+/* PRICING */
+#pricing{background:var(--off)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.price-card{background:var(--white);padding:3.5rem 3rem;position:relative}
+.price-card.featured{background:var(--ink)}
+.price-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--border)}
+.price-card.featured .price-bar{background:var(--teal-bright)}
+.price-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:1.5rem;font-family:var(--S)}
+.price-card:not(.featured) .price-tag{background:var(--teal-pale);color:var(--teal)}
+.price-card.featured .price-tag{background:rgba(19,153,107,.2);color:var(--teal-bright)}
+.price-amount{font-family:var(--F);font-size:3.5rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:.5rem}
+.price-card.featured .price-amount{color:#fff}
+.price-range{font-size:.85rem;color:var(--ink-40);margin-bottom:.5rem}
+.price-card.featured .price-range{color:rgba(255,255,255,.4)}
+.price-desc{font-size:.9rem;color:var(--ink-70);line-height:1.7;margin-bottom:2rem;max-width:380px}
+.price-card.featured .price-desc{color:rgba(255,255,255,.5)}
+.price-includes{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.pi{font-size:.84rem;color:var(--ink-70);display:flex;align-items:flex-start;gap:.6rem}
+.price-card.featured .pi{color:rgba(255,255,255,.5)}
+.pi::before{content:'✓';color:var(--teal-bright);font-weight:700;flex-shrink:0;font-size:.8rem}
+.price-note{font-size:.75rem;color:var(--ink-40);margin-top:1rem}
+.price-card.featured .price-note{color:rgba(255,255,255,.28)}
+
+/* WHO IT'S FOR */
+#who{background:var(--white)}
+.who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:4rem}
+.who-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start}
+.who-icon{width:40px;height:40px;border-radius:8px;background:var(--teal-pale);display:grid;place-items:center;flex-shrink:0}
+.who-icon svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.who-title{font-size:.93rem;font-weight:700;color:var(--ink);margin-bottom:.35rem;font-family:var(--S)}
+.who-body{font-size:.84rem;color:var(--ink-70);line-height:1.65}
+
+/* APPLY FORM */
+#apply{background:var(--off)}
+.apply-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.apply-left h2{margin-bottom:1.25rem}
+.apply-left p{margin-bottom:2rem}
+.apply-trust{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.at-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.85rem;color:var(--ink-70);line-height:1.5}
+.at-check{width:20px;height:20px;border-radius:50%;background:var(--teal-pale);display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+.at-check svg{width:10px;height:10px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.5rem;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.form-title{font-family:var(--S);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.form-sub{font-size:.82rem;color:var(--ink-40);margin-bottom:2rem}
+.form{display:flex;flex-direction:column;gap:1rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.ff{display:flex;flex-direction:column;gap:.35rem}
+.ff label{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);font-family:var(--S)}
+.ff input,.ff select,.ff textarea{background:var(--off);border:1.5px solid var(--border);border-radius:6px;color:var(--ink);font-family:var(--S);font-size:.92rem;padding:.8rem 1rem;outline:none;transition:border .18s;width:100%;appearance:none;resize:vertical}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--ink);background:#fff}
+.ff input::placeholder,.ff textarea::placeholder{color:var(--ink-40)}
+.ff textarea{min-height:90px}
+.radio-group{display:flex;gap:.75rem;flex-wrap:wrap}
+.radio-opt{display:flex;align-items:center;gap:.4rem;cursor:pointer}
+.radio-opt input{width:16px;height:16px;cursor:pointer;accent-color:var(--teal)}
+.radio-opt span{font-size:.85rem;color:var(--ink-70)}
+.fsub{background:var(--ink);color:#fff;border:none;border-radius:6px;padding:1.05rem;font-family:var(--S);font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s;margin-top:.5rem}
+.fsub:hover{background:var(--teal)}
+.fnote{font-size:.76rem;color:var(--ink-40);text-align:center;margin-top:.5rem}
+.success{display:none;text-align:center;padding:2.5rem 1rem}
+.success.on{display:block}
+.s-tick{font-family:var(--F);font-size:3rem;color:var(--teal);margin-bottom:.75rem}
+.s-title{font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;font-family:var(--S)}
+.s-body{font-size:.88rem;color:var(--ink-70);line-height:1.7}
+
+/* FOOTER — identical to index.html */
+footer{background:var(--off);border-top:1px solid var(--border);padding:5rem 0 2.5rem}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.fb-logo{display:flex;align-items:center;gap:.45rem;text-decoration:none;margin-bottom:1.1rem}
+.fb-tag{font-size:.87rem;color:var(--ink-70);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.5rem}
+.fsb{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink-40);text-decoration:none;transition:all .15s;font-family:var(--S)}
+.fsb:hover{border-color:var(--teal);color:var(--teal)}
+.fcol h5{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;font-family:var(--S)}
+.fcol a{display:block;font-size:.87rem;color:var(--ink-70);text-decoration:none;margin-bottom:.6rem;transition:color .15s}
+.fcol a:hover{color:var(--teal)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.8rem;color:var(--ink-40)}
+.flegal{display:flex;gap:1.5rem}
+.flegal a{font-size:.78rem;color:var(--ink-40);text-decoration:none;transition:color .15s}
+.flegal a:hover{color:var(--ink-70)}
+.fca-note{font-size:.72rem;color:var(--ink-40);line-height:1.65;margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border);max-width:700px}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+@media(max-width:1100px){
+  .what-grid,.apply-wrap{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr;gap:2rem}
+  .pricing-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  h1{font-size:2.6rem}h2{font-size:1.9rem}
+  nav .nl,.na .btn-line{display:none}
+  .ni{padding:0 1.25rem}
+  section{padding:5rem 0}
+  .container{padding:0 1.25rem}
+  .phases-grid,.del-grid,.who-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .fbot{flex-direction:column;align-items:flex-start}
+  .frow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo">
+      <div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="ln">VERSPA</span>
+    </a>
+    <ul class="nl">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="for-project-owners.html">For Developers</a></li>
+      <li><a href="for-funding-partners.html">For Investors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <div class="na">
+      <a href="book-a-call.html" class="btn btn-line" style="font-size:.8rem;padding:.6rem 1.1rem">Book a Call</a>
+      <a href="#apply" class="btn btn-dark" style="font-size:.8rem;padding:.6rem 1.25rem">Apply Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="hero-badge rv">
+      <div class="badge-dot"></div>
+      <span class="label" style="letter-spacing:.08em">Live Now — No FCA Licence Required</span>
+    </div>
+    <h1 class="rv d1">From raw project to<br><span class="it">investment-ready.</span></h1>
+    <p class="lg rv d2">The VERSPA Launchpad is a structured 12-week investment readiness programme for renewable energy project developers. Grant advisory, commercial feasibility, deal structuring and compliance — everything you need to reach financial close, faster.</p>
+    <div class="hero-actions rv d2">
+      <a href="#apply" class="btn btn-dark">Apply to the Launchpad</a>
+      <a href="book-a-call.html" class="btn btn-line">Book a Discovery Call</a>
+    </div>
+    <div class="hero-stats rv d3">
+      <div class="hs"><div class="hs-val">12<span>wk</span></div><div class="hs-label">Structured programme from raw project to investment-ready listing</div></div>
+      <div class="hs"><div class="hs-val">120<span>+</span></div><div class="hs-label">Grant sources continuously monitored across UK, EU and EMEA</div></div>
+      <div class="hs"><div class="hs-val">48<span>h</span></div><div class="hs-label">Commercial Feasibility Report generation vs 3–4 week manual process</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS THE LAUNCHPAD -->
+<section>
+  <div class="container">
+    <div class="what-grid">
+      <div>
+        <div class="rv"><span class="label">What is the Launchpad</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">The gap between a project<br><span class="it">and its funding.</span></h2>
+        <p class="lg rv d2" style="margin-top:1.25rem">Most renewable energy projects fail to reach financial close not because they are bad projects — but because they are not investment-ready. The documentation is incomplete, the compliance pathway is unclear, and the right capital cannot find them.</p>
+        <p class="rv d2" style="margin-top:1rem">The VERSPA Launchpad closes that gap. In 12 weeks, we take your project through a structured investment readiness process — producing the commercial feasibility report, identifying and applying for relevant grants, structuring the deal documentation, and preparing your project for listing on the VERSPA Capital Marketplace once FCA authorisation is received.</p>
+        <p class="rv d2" style="margin-top:1rem">Advisory services are live now and do not require FCA authorisation. You can engage VERSPA today.</p>
+        <div style="margin-top:2.5rem" class="rv d3"><a href="#apply" class="btn btn-dark">Apply to the Launchpad</a></div>
+      </div>
+      <div class="what-visual rv d1">
+        <div class="wv-label">12-week programme overview</div>
+        <div class="wv-item"><div class="wv-num">01</div><div><div class="wv-title">Project assessment &amp; onboarding</div><div class="wv-sub">Initial review, scoping call, programme agreement</div></div><div class="wv-week">Wk 1–2</div></div>
+        <div class="wv-item"><div class="wv-num">02</div><div><div class="wv-title">Commercial feasibility report</div><div class="wv-sub">CFR production, market analysis, financial modelling</div></div><div class="wv-week">Wk 3–5</div></div>
+        <div class="wv-item"><div class="wv-num">03</div><div><div class="wv-title">Grant identification &amp; applications</div><div class="wv-sub">Grant radar scan, shortlist, application support</div></div><div class="wv-week">Wk 4–7</div></div>
+        <div class="wv-item"><div class="wv-num">04</div><div><div class="wv-title">Deal structuring &amp; documentation</div><div class="wv-sub">Term sheet, investment structure, SPV guidance</div></div><div class="wv-week">Wk 6–9</div></div>
+        <div class="wv-item"><div class="wv-num">05</div><div><div class="wv-title">Compliance &amp; regulatory pathway</div><div class="wv-sub">Jurisdiction mapping, FCA pathway, cross-border compliance</div></div><div class="wv-week">Wk 8–11</div></div>
+        <div class="wv-item"><div class="wv-num">06</div><div><div class="wv-title">Investment readiness sign-off</div><div class="wv-sub">Final review, investor pitch preparation, marketplace listing</div></div><div class="wv-week">Wk 12</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section id="phases">
+  <div class="container">
+    <div class="rv"><span class="label">Programme phases</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">Three phases.<br><span class="it">One outcome.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:560px">The Launchpad is structured in three sequential phases, each building on the last. By the end of week 12, your project is investment-ready.</p>
+    <div class="phases-grid">
+      <div class="phase rv d1">
+        <div class="phase-bar"></div>
+        <div class="phase-num">1</div>
+        <div class="phase-tag">Phase 1</div>
+        <div class="phase-weeks">WEEKS 1–4</div>
+        <h3>Assess &amp; diagnose</h3>
+        <p style="margin-top:.75rem">We start by understanding your project completely — its stage, its gaps, its potential and its risks. This phase produces a clear picture of what your project needs to reach financial close and a structured plan to get there.</p>
+        <div class="phase-items">
+          <div class="phase-item">Project assessment and scoping call</div>
+          <div class="phase-item">Commercial feasibility report (CFR) production</div>
+          <div class="phase-item">Grant radar scan — all open funding calls matched to your project</div>
+          <div class="phase-item">Gap analysis — what is missing from your investment case</div>
+        </div>
+      </div>
+      <div class="phase rv d2">
+        <div class="phase-bar"></div>
+        <div class="phase-num">2</div>
+        <div class="phase-tag">Phase 2</div>
+        <div class="phase-weeks">WEEKS 5–9</div>
+        <h3>Structure &amp; document</h3>
+        <p style="margin-top:.75rem">With the diagnosis complete, we structure your deal and build the documentation package that investors and institutions require. This phase turns your project from an idea into a structured investment opportunity.</p>
+        <div class="phase-items">
+          <div class="phase-item">Investment structure design — debt, equity or blended</div>
+          <div class="phase-item">Term sheet and investment agreement templates</div>
+          <div class="phase-item">SPV setup guidance where required</div>
+          <div class="phase-item">Grant applications submitted with our support</div>
+        </div>
+      </div>
+      <div class="phase rv d3">
+        <div class="phase-bar"></div>
+        <div class="phase-num">3</div>
+        <div class="phase-tag">Phase 3</div>
+        <div class="phase-weeks">WEEKS 10–12</div>
+        <h3>Launch &amp; list</h3>
+        <p style="margin-top:.75rem">The final phase prepares your project for the market. Compliance is confirmed, your investor pitch is ready and your project is prepared for listing on the VERSPA Capital Marketplace once FCA authorisation is received.</p>
+        <div class="phase-items">
+          <div class="phase-item">Cross-border compliance confirmation</div>
+          <div class="phase-item">KYC/AML documentation package</div>
+          <div class="phase-item">Investor pitch preparation and review</div>
+          <div class="phase-item">Investment readiness sign-off and marketplace listing preparation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliverables">
+  <div class="container">
+    <div class="rv"><span class="label">What you get</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">Six deliverables.<br><span class="it">One investment-ready project.</span></h2>
+    <div class="del-grid">
+      <div class="del-card rv d1">
+        <div class="del-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="del-title">Commercial Feasibility Report</div>
+        <div class="del-body">A full CFR covering market analysis, financial modelling, risk assessment and commercial viability — the foundational document every investor and grant body requires.</div>
+      </div>
+      <div class="del-card rv d2">
+        <div class="del-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div class="del-title">Grant Identification &amp; Applications</div>
+        <div class="del-body">A full scan of 120+ grant sources across Innovate UK, UKRI, EU Green Deal, AfDB, IFC and BII — matched to your project type, country and stage. Applications submitted with our support.</div>
+      </div>
+      <div class="del-card rv d3">
+        <div class="del-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="del-title">Deal Structure &amp; Term Sheet</div>
+        <div class="del-body">Investment structure design — debt, equity, grant or blended finance — with a fully drafted term sheet and investment agreement template tailored to your project and jurisdiction.</div>
+      </div>
+      <div class="del-card rv d1">
+        <div class="del-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="del-title">Compliance &amp; Regulatory Pathway</div>
+        <div class="del-body">Cross-border compliance mapping across your project's jurisdiction — regulatory requirements, FCA pathway where applicable, KYC/AML documentation package and SPV setup guidance.</div>
+      </div>
+      <div class="del-card rv d2">
+        <div class="del-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="del-title">VERSPA Intelligence Scoring</div>
+        <div class="del-body">Your project is scored across innovation, viability, market readiness and ESG impact using the VERSPA Intelligence engine — the same scoring investors and institutions use to evaluate projects on the platform.</div>
+      </div>
+      <div class="del-card rv d3">
+        <div class="del-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="del-title">Marketplace Listing Preparation</div>
+        <div class="del-body">Your project is prepared for listing on the VERSPA Capital Marketplace — investor pitch, project summary, impact metrics and all documentation — ready for the moment FCA authorisation is received.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="rv"><span class="label">Programme pricing</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">Transparent pricing.<br><span class="it">Aligned incentives.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:560px">The Launchpad fee covers the full 12-week programme. The success fee is charged only if your project completes a successful raise — our interests are completely aligned with yours.</p>
+    <div class="pricing-grid rv d2">
+      <div class="price-card">
+        <div class="price-bar"></div>
+        <div class="price-tag">Programme fee</div>
+        <div class="price-amount">£5k–£15k</div>
+        <div class="price-range">Depending on project size and complexity</div>
+        <div class="price-desc">The programme fee covers the full 12-week Launchpad — CFR production, grant applications, deal structuring, compliance pathway and investment readiness sign-off. Paid on engagement.</div>
+        <div class="price-includes">
+          <div class="pi">Full 12-week structured programme</div>
+          <div class="pi">Commercial Feasibility Report</div>
+          <div class="pi">Grant radar scan and applications</div>
+          <div class="pi">Deal structuring and term sheet</div>
+          <div class="pi">Compliance and regulatory pathway</div>
+          <div class="pi">VERSPA Intelligence project scoring</div>
+        </div>
+        <div class="price-note">Projects under £500k capital target: £5,000 programme fee. £500k–£2M: £8,000. £2M–£10M: £12,000. £10M+: £15,000.</div>
+      </div>
+      <div class="price-card featured">
+        <div class="price-bar"></div>
+        <div class="price-tag">Success fee</div>
+        <div class="price-amount">2%</div>
+        <div class="price-range">Of the total capital raised at financial close</div>
+        <div class="price-desc">The success fee is charged only when your project successfully raises capital through the VERSPA platform or through a VERSPA-facilitated raise. If you do not raise, you do not pay the success fee.</div>
+        <div class="price-includes">
+          <div class="pi">Charged only on successful raise</div>
+          <div class="pi">Aligned with your outcome — not our hours</div>
+          <div class="pi">Calculated on total capital raised</div>
+          <div class="pi">Includes post-Launchpad marketplace listing</div>
+          <div class="pi">Includes investor matching and introduction</div>
+          <div class="pi">Includes post-raise compliance support</div>
+        </div>
+        <div class="price-note">Example: £2M raise at financial close = £40,000 success fee. £10M raise = £200,000 success fee.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <div class="container">
+    <div class="rv"><span class="label">Who it's for</span></div>
+    <h2 class="rv d1" style="margin-top:1rem;max-width:640px">Built for serious<br><span class="it">project developers.</span></h2>
+    <p class="lg rv d2" style="margin-top:1.25rem;max-width:560px">The Launchpad is designed for renewable energy project developers who have a real project and the ambition to raise capital — but need structured support to get investment-ready.</p>
+    <div class="who-grid rv d2">
+      <div class="who-card">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div>
+          <div class="who-title">Early-stage developers with a project site or concept</div>
+          <div class="who-body">You have a site, a project idea and a plan — but you need the commercial feasibility report, deal structure and compliance pathway to make it investable. The Launchpad builds all of this for you.</div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div>
+          <div class="who-title">Developers ready to structure and raise</div>
+          <div class="who-body">Your project is in development and you are ready to approach investors — but you need your documentation and deal structure in order first. The Launchpad accelerates the final steps to investment readiness.</div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>
+          <div class="who-title">Projects seeking grants alongside equity or debt</div>
+          <div class="who-body">You want to blend grant funding with private capital — but navigating Innovate UK, AfDB, IFC and EU Green Deal simultaneously is complex. The Launchpad manages all of this in parallel.</div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="who-title">UK, EU and EMEA projects — all geographies</div>
+          <div class="who-body">Whether your project is in Scotland, Nigeria, Kenya or the UAE — the Launchpad is designed for cross-border renewable energy finance. We have compliance coverage across all VERSPA target jurisdictions.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section id="apply">
+  <div class="container">
+    <div class="apply-wrap">
+      <div class="apply-left">
+        <div class="rv"><span class="label">Apply to the Launchpad</span></div>
+        <h2 class="rv d1" style="margin-top:1rem">Ready to get<br><span class="it">investment-ready?</span></h2>
+        <p class="rv d2" style="margin-top:1.25rem">Complete the application below. We review every application within 3 business days and schedule a scoping call to discuss your project in detail before confirming your place on the programme.</p>
+        <div class="apply-trust rv d2">
+          <div class="at-item"><div class="at-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>No FCA licence required — advisory services are live now</div>
+          <div class="at-item"><div class="at-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>Review within 3 business days of application</div>
+          <div class="at-item"><div class="at-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>Scoping call before any commitment</div>
+          <div class="at-item"><div class="at-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>Success fee only on completed raise — aligned incentives</div>
+          <div class="at-item"><div class="at-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>All project types and geographies considered</div>
+        </div>
+      </div>
+      <div class="rv d1">
+        <div class="form-card">
+          <div class="form-title">Launchpad Application</div>
+          <div class="form-sub">Takes approximately 5 minutes to complete</div>
+          <div id="form-wrap">
+            <form class="form" onsubmit="submitForm(event)">
+              <!-- HUBSPOT FORM EMBED -->
+              <!-- Replace this entire form block with your HubSpot embed code -->
+              <!-- HubSpot form: VERSPA — Launchpad Application -->
+              <!-- Portal ID: [ADD YOUR PORTAL ID] -->
+              <!-- Form ID: [ADD YOUR FORM ID] -->
+              <div class="frow">
+                <div class="ff"><label>Full name <span style="color:var(--teal)">*</span></label><input type="text" placeholder="Your full name" required></div>
+                <div class="ff"><label>Email address <span style="color:var(--teal)">*</span></label><input type="email" placeholder="you@company.com" required></div>
+              </div>
+              <div class="frow">
+                <div class="ff"><label>Company / Project name <span style="color:var(--teal)">*</span></label><input type="text" placeholder="Company or project name" required></div>
+                <div class="ff"><label>Website or LinkedIn <span style="color:var(--ink-40);font-weight:400">(optional)</span></label><input type="url" placeholder="https://"></div>
+              </div>
+              <div class="frow">
+                <div class="ff">
+                  <label>Project type <span style="color:var(--teal)">*</span></label>
+                  <select required>
+                    <option value="">Select type</option>
+                    <option>Solar</option>
+                    <option>Wind (onshore)</option>
+                    <option>Wind (offshore)</option>
+                    <option>Hydro</option>
+                    <option>Bioenergy</option>
+                    <option>Energy storage</option>
+                    <option>Multiple / Other</option>
+                  </select>
+                </div>
+                <div class="ff">
+                  <label>Project country / region <span style="color:var(--teal)">*</span></label>
+                  <select required>
+                    <option value="">Select country</option>
+                    <option>United Kingdom</option>
+                    <option>Nigeria</option>
+                    <option>Ghana</option>
+                    <option>Kenya</option>
+                    <option>South Africa</option>
+                    <option>Senegal</option>
+                    <option>Tanzania</option>
+                    <option>Rwanda</option>
+                    <option>UAE</option>
+                    <option>Saudi Arabia</option>
+                    <option>Egypt</option>
+                    <option>Germany</option>
+                    <option>France</option>
+                    <option>Netherlands</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="frow">
+                <div class="ff">
+                  <label>Project stage <span style="color:var(--teal)">*</span></label>
+                  <select required>
+                    <option value="">Select stage</option>
+                    <option>Early concept</option>
+                    <option>Development stage</option>
+                    <option>Ready to structure</option>
+                    <option>Construction</option>
+                  </select>
+                </div>
+                <div class="ff">
+                  <label>Indicative funding need <span style="color:var(--teal)">*</span></label>
+                  <select required>
+                    <option value="">Select range</option>
+                    <option>Under £500k</option>
+                    <option>£500k – £2M</option>
+                    <option>£2M – £10M</option>
+                    <option>£10M+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ff">
+                <label>Funding purpose <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select purpose</option>
+                  <option>Development capital</option>
+                  <option>Construction financing</option>
+                  <option>Equipment / asset financing</option>
+                  <option>Working capital</option>
+                  <option>Refinancing</option>
+                  <option>Mixed / blended</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Current funding status <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select status</option>
+                  <option>Self-funded only</option>
+                  <option>Seeking first external capital</option>
+                  <option>Partially funded</option>
+                  <option>In discussions with investors</option>
+                  <option>Grant-funded</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Preferred funding type <span style="color:var(--teal)">*</span></label>
+                <select required>
+                  <option value="">Select preference</option>
+                  <option>Debt</option>
+                  <option>Equity</option>
+                  <option>Grant</option>
+                  <option>Blended finance</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Have you had a CFR or feasibility study done? <span style="color:var(--ink-40);font-weight:400">(optional)</span></label>
+                <div class="radio-group">
+                  <label class="radio-opt"><input type="radio" name="cfr" value="yes"><span>Yes</span></label>
+                  <label class="radio-opt"><input type="radio" name="cfr" value="no"><span>No</span></label>
+                  <label class="radio-opt"><input type="radio" name="cfr" value="inprogress"><span>In progress</span></label>
+                </div>
+              </div>
+              <div class="ff">
+                <label>Describe your project in 2–3 sentences <span style="color:var(--ink-40);font-weight:400">(optional)</span></label>
+                <textarea placeholder="Tell us about your project — what it is, where it is, and what stage you are at..."></textarea>
+              </div>
+              <div class="ff">
+                <label>How did you hear about VERSPA? <span style="color:var(--ink-40);font-weight:400">(optional)</span></label>
+                <select>
+                  <option value="">Select source</option>
+                  <option>LinkedIn</option>
+                  <option>Google search</option>
+                  <option>Referral from a contact</option>
+                  <option>Event or conference</option>
+                  <option>Press or media</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <button type="submit" class="fsub">Submit Application →</button>
+              <div class="fnote">We review every application within 3 business days and will be in touch to schedule a scoping call.</div>
+            </form>
+            <div class="success" id="form-success">
+              <div class="s-tick">✓</div>
+              <div class="s-title">Application received.</div>
+              <div class="s-body">Thank you for applying to the VERSPA Launchpad. We will review your application within 3 business days and reach out to schedule a scoping call. In the meantime, feel free to <a href="book-a-call.html" style="color:var(--teal);font-weight:600">book a discovery call</a> if you have any immediate questions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div>
+        <a href="index.html" class="fb-logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a>
+        <div class="fb-tag">The global infrastructure layer for renewable energy finance. Democratising clean energy investment. Connecting capital to climate.</div>
+        <div class="fsoc"><a href="#" class="fsb">in</a><a href="#" class="fsb">𝕏</a></div>
+      </div>
+      <div class="fcol">
+        <h5>Services</h5>
+        <a href="launchpad.html">The Launchpad</a>
+        <a href="for-project-owners.html">For Project Owners</a>
+        <a href="for-funding-partners.html">For Funding Partners</a>
+        <a href="book-a-call.html">Book a Discovery Call</a>
+        <a href="apply.html">Apply / Get Started</a>
+      </div>
+      <div class="fcol">
+        <h5>Company</h5>
+        <a href="about.html">About VERSPA</a>
+        <a href="regulatory-status.html">Regulatory Status</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Legal</h5>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span class="fcopy">© 2026 VERSPA Ltd. London, United Kingdom. verspa.co.uk</span>
+      <div class="flegal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Risk Warning</a><a href="cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <p class="fca-note">VERSPA is in the process of seeking FCA authorisation as a crowdfunding platform operator. Prior to authorisation, VERSPA provides advisory and deal structuring services only and does not facilitate investment transactions. Investments in renewable energy projects carry risk, including the risk of capital loss. VERSPA Ltd is registered in England and Wales. This website does not constitute financial advice. Capital is at risk.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('up',scrollY>10),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function submitForm(e){
+  e.preventDefault();
+  e.target.style.display='none';
+  document.getElementById('form-success').classList.add('on');
+}
+</script>
+</body>
+</html>
