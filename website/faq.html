@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSPA — Frequently Asked Questions</title>
+<meta name="description" content="Everything you need to know about VERSPA — regulatory status, investment, project developers, the Launchpad programme and platform technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B0C0E;--ink-70:rgba(11,12,14,.7);--ink-40:rgba(11,12,14,.4);--ink-12:rgba(11,12,14,.08);--white:#FFFFFF;--off:#F7F6F2;--teal:#0A6648;--teal-bright:#13996B;--teal-pale:#EAF4EF;--border:#E3E1DA;--F:'Libre Baskerville',Georgia,serif;--S:'Plus Jakarta Sans',system-ui,sans-serif;--M:'Space Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--S);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1{font-family:var(--F);font-size:clamp(2.8rem,5vw,5rem);font-weight:700;line-height:.97;letter-spacing:-.025em}
+h3{font-family:var(--F);font-size:1.15rem;font-weight:400;line-height:1.2}
+.it{font-style:italic;color:var(--teal)}
+.label{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+p{font-size:1.05rem;font-weight:300;line-height:1.78;color:var(--ink-70)}
+p.sm{font-size:.88rem;line-height:1.72}
+.container{max-width:1100px;margin:0 auto;padding:0 5vw}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--S);font-size:.85rem;font-weight:700;padding:.9rem 2rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none;border:none}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:var(--teal);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--border)}.btn-line:hover{border-color:var(--ink)}
+nav{position:fixed;inset:0 0 auto;z-index:900;height:66px;transition:all .3s}
+nav.up{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1320px;margin:0 auto;padding:0 5vw}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.lm{width:34px;height:34px;background:var(--ink);border-radius:5px;display:grid;place-items:center}
+.lm svg{width:20px;height:20px}
+.ln{font-family:var(--S);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.nl{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nl a{font-size:.82rem;font-weight:500;color:var(--ink-70);text-decoration:none;transition:color .15s}
+.nl a:hover{color:var(--ink)}
+.na{display:flex;gap:.6rem}
+.page-hero{padding:9rem 0 5rem;background:var(--off)}
+.faq-layout{display:grid;grid-template-columns:260px 1fr;gap:5rem;padding:5rem 0;align-items:start}
+.faq-nav{position:sticky;top:90px}
+.fn-section{margin-bottom:2rem}
+.fn-label{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-40);margin-bottom:.75rem;font-family:var(--S)}
+.fn-link{display:block;font-size:.85rem;color:var(--ink-70);text-decoration:none;padding:.3rem 0;transition:color .15s;border-left:2px solid transparent;padding-left:.75rem;margin-left:-.75rem}
+.fn-link:hover,.fn-link.active{color:var(--teal);border-left-color:var(--teal)}
+.faq-section{margin-bottom:4rem}
+.faq-section-title{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;cursor:pointer;gap:1.5rem;user-select:none}
+.faq-q-text{font-size:.95rem;font-weight:600;color:var(--ink);font-family:var(--S);line-height:1.35}
+.faq-ico{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border);display:grid;place-items:center;flex-shrink:0;transition:all .25s}
+.faq-ico svg{width:11px;height:11px;stroke:var(--ink-70);fill:none;stroke-width:2;stroke-linecap:round;transition:all .25s}
+.faq-item.open .faq-ico{background:var(--teal);border-color:var(--teal)}
+.faq-item.open .faq-ico svg{stroke:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding-bottom:1.25rem;font-size:.92rem;color:var(--ink-70);line-height:1.78}
+footer{background:var(--off);border-top:1px solid var(--border);padding:5rem 0 2.5rem}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.fb-logo{display:flex;align-items:center;gap:.45rem;text-decoration:none;margin-bottom:1.1rem}
+.fb-tag{font-size:.87rem;color:var(--ink-70);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.5rem}
+.fsb{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink-40);text-decoration:none;transition:all .15s;font-family:var(--S)}
+.fsb:hover{border-color:var(--teal);color:var(--teal)}
+.fcol h5{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;font-family:var(--S)}
+.fcol a{display:block;font-size:.87rem;color:var(--ink-70);text-decoration:none;margin-bottom:.6rem;transition:color .15s}
+.fcol a:hover{color:var(--teal)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.8rem;color:var(--ink-40)}
+.flegal{display:flex;gap:1.5rem}
+.flegal a{font-size:.78rem;color:var(--ink-40);text-decoration:none;transition:color .15s}
+.flegal a:hover{color:var(--ink-70)}
+.fca-note{font-size:.72rem;color:var(--ink-40);line-height:1.65;margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border);max-width:700px}
+@media(max-width:1100px){.faq-layout{grid-template-columns:1fr}.faq-nav{display:none}.fg{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:768px){h1{font-size:2.4rem}nav .nl,.na .btn-line{display:none}.ni{padding:0 1.25rem}.container{padding:0 1.25rem}.fg{grid-template-columns:1fr}.fbot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a>
+    <ul class="nl"><li><a href="index.html">Home</a></li><li><a href="launchpad.html">Launchpad</a></li><li><a href="for-project-owners.html">For Developers</a></li><li><a href="for-funding-partners.html">For Investors</a></li><li><a href="about.html">About</a></li></ul>
+    <div class="na"><a href="book-a-call.html" class="btn btn-line" style="font-size:.8rem;padding:.6rem 1.1rem">Book a Call</a><a href="apply.html" class="btn btn-dark" style="font-size:.8rem;padding:.6rem 1.25rem">Get Started</a></div>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="container">
+    <span class="label">FAQ</span>
+    <h1 style="margin-top:1rem">Questions,<br><span class="it">answered.</span></h1>
+    <p style="margin-top:1.5rem;max-width:520px">Everything you need to know about VERSPA, our regulatory status, how to invest and how to raise capital through the platform.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="faq-layout">
+    <div class="faq-nav">
+      <div class="fn-section"><div class="fn-label">Jump to</div><a href="#about" class="fn-link">About VERSPA</a><a href="#regulatory" class="fn-link">Regulatory &amp; FCA</a><a href="#investors" class="fn-link">For investors</a><a href="#developers" class="fn-link">For developers</a><a href="#launchpad" class="fn-link">The Launchpad</a><a href="#platform" class="fn-link">Platform &amp; technology</a></div>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn btn-dark" style="font-size:.78rem;padding:.7rem 1.25rem">Still have questions?</a></div>
+    </div>
+    <div>
+      <div class="faq-section" id="about">
+        <div class="faq-section-title">About VERSPA</div>
+        <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is VERSPA?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA is a cross-border renewable energy finance platform headquartered in London. We connect renewable energy project developers, diaspora investors, retail investors, institutional capital and development finance institutions (DFIs) across the UK, EU and EMEA through a single regulated platform. Our six pillars cover: a capital marketplace, deal infrastructure, grant and compliance advisory, AI-powered deal intelligence, a tokenised secondary market and a B2B API for banks and energy companies.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What problem does VERSPA solve?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA solves two structural failures simultaneously. First: viable renewable energy projects across the UK, EU and EMEA fail to reach financial close because deal structuring is slow, compliance is fragmented and retail capital cannot find them efficiently. Second: individual investors — including diaspora communities with deep connections to energy-poor regions — have no regulated, accessible route to invest in the renewable energy projects that matter to them. VERSPA solves both sides on a single regulated platform.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Who founded VERSPA and where is it based?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA was founded by a UK-based renewable energy finance professional with an MSc in Finance and Data Analytics, experience at Smart Metering PLC (Group Finance, Senior Systems Analyst, Metis.co.uk) and formal startup commercialisation training at Cambridge Judge Business School (Breaking Barriers, Enterprise Tech Cohort 17). VERSPA is headquartered in London and registered in England and Wales. The founder also developed W3-Energy.org, a prior MVP in cross-border renewable energy finance that was pivoted to VERSPA on the advice of Surrey Business School.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Why is VERSPA based in London?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">London is the world's leading international financial centre. FCA regulation gives VERSPA global credibility and a passport to operate across jurisdictions. The UK is also the world's largest offshore wind market, has one of the most financially active diaspora communities globally, and sits at the intersection of UK-EU-EMEA capital flows. No other city combines the legal infrastructure, talent pool and investor access required to run a cross-border energy finance platform of this scope.</div></div></div>
+      </div>
+      <div class="faq-section" id="regulatory">
+        <div class="faq-section-title">Regulatory &amp; FCA</div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Is VERSPA FCA authorised?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Not yet. VERSPA is in the process of seeking FCA authorisation as a crowdfunding platform operator under the Financial Services and Markets Act 2000. Prior to full authorisation, VERSPA operates as an advisory and deal structuring business only — which does not require FCA authorisation. The full investment marketplace will launch once authorisation is received. We are targeting FCA authorisation within 12–18 months of incorporation. See our full Regulatory Status page for details.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What can VERSPA do now without FCA authorisation?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA can provide: grant advisory and applications (Innovate UK, UKRI, AfDB, IFC, EU Green Deal), Commercial Feasibility Reports, deal structuring advisory, compliance and regulatory pathway guidance, the VERSPA Launchpad 12-week programme, and investor and developer waitlist registration. None of these activities require FCA authorisation. Advisory services are live now and you can engage VERSPA today.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can I invest through VERSPA right now?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Not yet. VERSPA cannot facilitate investment transactions prior to FCA authorisation. However, you can register your interest now as a funding partner — you will be among the first to access the platform when the Capital Marketplace launches. Registering also allows us to match your geography and investment preferences to projects in the pipeline, so you are ready to invest from day one.</div></div></div>
+      </div>
+      <div class="faq-section" id="investors">
+        <div class="faq-section-title">For investors</div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the minimum investment amount?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA is designed to democratise access to renewable energy investment. The minimum investment is £10, allowing retail investors to participate in the same projects that institutions access. There is no maximum. Larger investors — including institutions, DFIs and family offices — can access structured instruments including mezzanine debt and equity through our institutional channel.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What returns can I expect?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Returns vary by project type, structure and geography. We target returns in the range of 5–9% annually depending on the instrument. Debt instruments offer fixed target returns of 5–7%. Equity instruments offer variable returns with higher upside potential of 7–9%+. Blended finance instruments typically target 6–8%. All investments carry risk, including the risk of capital loss. Target returns are not guaranteed. Past performance of comparable platforms is not indicative of future results on VERSPA.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can I invest in projects in specific countries?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Yes. VERSPA allows investors to specify a primary geography of interest — UK, West Africa, East Africa, MENA, EU or all regions. We also support investors who have a personal connection to a specific country and want to invest in energy projects there. When you register, your geography preference is matched to projects in the pipeline and you are notified when matching projects become available at launch.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Are there tax benefits for UK investors?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Some investments on VERSPA may qualify for EIS (Enterprise Investment Scheme) or SEIS (Seed Enterprise Investment Scheme) tax relief, offering UK investors up to 50% income tax relief (SEIS) or 30% (EIS) on eligible investments. We provide guidance on tax wrapper eligibility as part of our investor onboarding. Note that tax treatment depends on individual circumstances and VERSPA does not provide tax advice — we recommend consulting a qualified tax advisor.</div></div></div>
+      </div>
+      <div class="faq-section" id="developers">
+        <div class="faq-section-title">For project developers</div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What types of projects can VERSPA support?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA supports renewable energy projects across solar, onshore wind, offshore wind, hydro, bioenergy and energy storage. We operate across the UK, EU, West Africa, East Africa and MENA. Projects at any stage — from early concept to construction — can engage VERSPA advisory services. Investment readiness support and marketplace listing are available to projects from development stage onwards.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How do I raise capital through VERSPA?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">The path to raising capital through VERSPA is: (1) Apply to the VERSPA Launchpad — our 12-week investment readiness programme. (2) Complete the Launchpad to produce your CFR, deal structure, grant applications and compliance pathway. (3) Your project is prepared for listing on the VERSPA Capital Marketplace. (4) Once FCA authorisation is received, your project goes live and investors can commit capital. You can engage advisory services now — no FCA authorisation required.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Which countries do you have grant advisory coverage for?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA monitors 120+ grant sources globally. For UK projects: Innovate UK, UKRI, British International Investment, Contracts for Difference. For EMEA projects: AfDB Clean Energy Facility, IFC Solar Acceleration Programme, EU Green Deal Africa Tranche, BII Climate Finance Facility. For EU projects: EU Green Deal, Horizon Europe, national green energy programmes. Advisory services can be provided globally from day one.</div></div></div>
+      </div>
+      <div class="faq-section" id="launchpad">
+        <div class="faq-section-title">The Launchpad</div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What does the Launchpad cost?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">The Launchpad programme fee ranges from £5,000 to £15,000 depending on project size and complexity. Projects under £500k capital target: £5,000. £500k–£2M: £8,000. £2M–£10M: £12,000. £10M+: £15,000. A success fee of 2% of the total capital raised is charged only if your project successfully raises capital. If you do not raise, you do not pay the success fee.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How long does the Launchpad take?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">The VERSPA Launchpad is a 12-week structured programme. Phase 1 (Weeks 1–4): project assessment and CFR production. Phase 2 (Weeks 5–9): deal structuring, documentation and grant applications. Phase 3 (Weeks 10–12): compliance confirmation, investor pitch preparation and marketplace listing readiness. The timeline may vary depending on project complexity and responsiveness.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Does the Launchpad require FCA authorisation?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">No. The Launchpad is an advisory and deal structuring programme — it does not facilitate investment transactions and does not require FCA authorisation. You can apply to the Launchpad and begin the programme today. The marketplace listing component activates once FCA authorisation is received.</div></div></div>
+      </div>
+      <div class="faq-section" id="platform">
+        <div class="faq-section-title">Platform &amp; technology</div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is VERSPA Intelligence?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA Intelligence is our AI layer that automates project scoring, investor-deal matching, Commercial Feasibility Report generation, compliance gap analysis and grant identification. It continuously monitors 120+ grant sources globally and matches open calls to projects in the VERSPA pipeline. Project scoring assesses innovation, viability, market readiness and ESG impact with 94% accuracy versus manual assessment. VERSPA Intelligence is in beta and available to early waitlist members.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is VERSPA Vault?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA Vault is our planned tokenised secondary market — enabling investors to trade fractional ownership stakes in renewable energy projects peer-to-peer on a regulated basis. It solves the illiquidity problem of long-duration energy investments. VERSPA Vault is planned for 2027, subject to FCA sandbox approval and regulatory clearance.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the VERSPA B2B API?</span><div class="faq-ico"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">VERSPA Network is a white-label infrastructure layer that licenses VERSPA's deal rails, compliance engine and investor portal to banks, DFIs and energy companies across EMEA. It enables institutions to offer renewable energy investment capabilities to their own clients, powered by VERSPA infrastructure. The B2B API is planned for Year 3 of operations and represents the long-term infrastructure play — becoming the Stripe of renewable energy finance.</div></div></div>
+      </div>
+      <div style="padding:2.5rem;background:var(--off);border:1px solid var(--border);border-radius:10px;text-align:center">
+        <p class="sm" style="margin-bottom:1.25rem">Still have a question not answered here?</p>
+        <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-dark">Send us a message</a>
+          <a href="book-a-call.html" class="btn btn-line">Book a discovery call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div><a href="index.html" class="fb-logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a><div class="fb-tag">The global infrastructure layer for renewable energy finance.</div><div class="fsoc"><a href="#" class="fsb">in</a><a href="#" class="fsb">𝕏</a></div></div>
+      <div class="fcol"><h5>Services</h5><a href="launchpad.html">The Launchpad</a><a href="for-project-owners.html">For Project Owners</a><a href="for-funding-partners.html">For Funding Partners</a><a href="book-a-call.html">Book a Discovery Call</a></div>
+      <div class="fcol"><h5>Company</h5><a href="about.html">About VERSPA</a><a href="regulatory-status.html">Regulatory Status</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h5>Legal</h5><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="cookie-policy.html">Cookie Policy</a><a href="disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="fbot"><span class="fcopy">© 2026 VERSPA Ltd. London, United Kingdom.</span><div class="flegal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Risk Warning</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
+    <p class="fca-note">VERSPA is in the process of seeking FCA authorisation. Prior to authorisation, VERSPA provides advisory and deal structuring services only. This website does not constitute financial advice. Capital is at risk.</p>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('up',scrollY>10),{passive:true});
+function toggleFaq(btn){const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0'});if(!isOpen){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a-inner').scrollHeight+'px'}}
+document.querySelectorAll('.faq-item.open').forEach(i=>{i.querySelector('.faq-a').style.maxHeight=i.querySelector('.faq-a-inner').scrollHeight+'px'});
+</script>
+</body>
+</html>

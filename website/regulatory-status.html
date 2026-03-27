@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSPA — Regulatory Status</title>
+<meta name="description" content="Full transparency on VERSPA's current regulatory status. What we can do now, what we cannot do yet, and our FCA authorisation pathway.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B0C0E;--ink-70:rgba(11,12,14,.7);--ink-40:rgba(11,12,14,.4);--ink-12:rgba(11,12,14,.08);--white:#FFFFFF;--off:#F7F6F2;--teal:#0A6648;--teal-bright:#13996B;--teal-pale:#EAF4EF;--border:#E3E1DA;--F:'Libre Baskerville',Georgia,serif;--S:'Plus Jakarta Sans',system-ui,sans-serif;--M:'Space Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--S);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1{font-family:var(--F);font-size:clamp(2.8rem,5vw,5rem);font-weight:700;line-height:.97;letter-spacing:-.025em}
+h2{font-family:var(--F);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+h3{font-family:var(--F);font-size:1.4rem;font-weight:400;line-height:1.1}
+.it{font-style:italic;color:var(--teal)}
+.label{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+p{font-size:1.05rem;font-weight:300;line-height:1.78;color:var(--ink-70)}
+p.sm{font-size:.88rem;line-height:1.72}
+.container{max-width:1100px;margin:0 auto;padding:0 5vw}
+section{padding:5rem 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--S);font-size:.85rem;font-weight:700;padding:.9rem 2rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none;border:none}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:var(--teal);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--border)}.btn-line:hover{border-color:var(--ink)}
+nav{position:fixed;inset:0 0 auto;z-index:900;height:66px;transition:all .3s}
+nav.up{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1320px;margin:0 auto;padding:0 5vw}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.lm{width:34px;height:34px;background:var(--ink);border-radius:5px;display:grid;place-items:center}
+.lm svg{width:20px;height:20px}
+.ln{font-family:var(--S);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.nl{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nl a{font-size:.82rem;font-weight:500;color:var(--ink-70);text-decoration:none;transition:color .15s}
+.nl a:hover{color:var(--ink)}
+.na{display:flex;gap:.6rem}
+.page-hero{padding:9rem 0 5rem;background:var(--off)}
+.status-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.25rem;border-radius:100px;font-family:var(--S);font-size:.75rem;font-weight:700;margin-bottom:1.5rem}
+.status-badge.advisory{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}
+.status-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);margin-top:3rem}
+.sg{background:var(--white);padding:2.5rem}
+.sg-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.sg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sg-dot.green{background:#22C55E}
+.sg-dot.amber{background:#F59E0B}
+.sg-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:var(--S)}
+.sg-dot.green + .sg-label{color:#166534}
+.sg-dot.amber + .sg-label{color:#92400E}
+.sg-items{display:flex;flex-direction:column;gap:.6rem}
+.sg-item{font-size:.88rem;color:var(--ink-70);padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:.6rem;line-height:1.55}
+.sg-item:last-child{border-bottom:none}
+.sg-item::before{font-weight:700;flex-shrink:0;font-size:.8rem}
+.sg.can .sg-item::before{content:'✓';color:#22C55E}
+.sg.cannot .sg-item::before{content:'×';color:#EF4444}
+.timeline{margin-top:4rem}
+.tl-item{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border);align-items:start}
+.tl-item:first-child{border-top:1px solid var(--border)}
+.tl-date{font-family:var(--M);font-size:.72rem;color:var(--ink-40);padding-top:.2rem}
+.tl-date.active{color:var(--teal)}
+.tl-title{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;font-family:var(--S)}
+.tl-body{font-size:.85rem;color:var(--ink-70);line-height:1.65}
+.tl-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;margin-top:.6rem;font-family:var(--S)}
+.tl-tag.done{background:#DCFCE7;color:#166534}
+.tl-tag.now{background:var(--teal-pale);color:var(--teal)}
+.tl-tag.soon{background:var(--ink-12);color:var(--ink-40)}
+footer{background:var(--off);border-top:1px solid var(--border);padding:5rem 0 2.5rem}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.fb-logo{display:flex;align-items:center;gap:.45rem;text-decoration:none;margin-bottom:1.1rem}
+.fb-tag{font-size:.87rem;color:var(--ink-70);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.5rem}
+.fsb{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink-40);text-decoration:none;transition:all .15s;font-family:var(--S)}
+.fsb:hover{border-color:var(--teal);color:var(--teal)}
+.fcol h5{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;font-family:var(--S)}
+.fcol a{display:block;font-size:.87rem;color:var(--ink-70);text-decoration:none;margin-bottom:.6rem;transition:color .15s}
+.fcol a:hover{color:var(--teal)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.8rem;color:var(--ink-40)}
+.flegal{display:flex;gap:1.5rem}
+.flegal a{font-size:.78rem;color:var(--ink-40);text-decoration:none;transition:color .15s}
+.flegal a:hover{color:var(--ink-70)}
+.fca-note{font-size:.72rem;color:var(--ink-40);line-height:1.65;margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border);max-width:700px}
+@media(max-width:1100px){.fg{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:768px){h1{font-size:2.4rem}nav .nl,.na .btn-line{display:none}.ni{padding:0 1.25rem}section{padding:4rem 0}.container{padding:0 1.25rem}.status-grid,.tl-item{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.fbot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a>
+    <ul class="nl"><li><a href="index.html">Home</a></li><li><a href="launchpad.html">Launchpad</a></li><li><a href="for-project-owners.html">For Developers</a></li><li><a href="for-funding-partners.html">For Investors</a></li><li><a href="about.html">About</a></li></ul>
+    <div class="na"><a href="book-a-call.html" class="btn btn-line" style="font-size:.8rem;padding:.6rem 1.1rem">Book a Call</a><a href="apply.html" class="btn btn-dark" style="font-size:.8rem;padding:.6rem 1.25rem">Get Started</a></div>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="container">
+    <span class="label">Regulatory status</span>
+    <div class="status-badge advisory" style="margin-top:1rem">⚠️ Advisory services only — FCA authorisation in progress</div>
+    <h1 style="margin-top:.5rem">What we can do.<br><span class="it">What we cannot. Yet.</span></h1>
+    <p style="margin-top:1.5rem;max-width:620px">VERSPA is committed to full transparency on our regulatory position. This page tells you exactly what VERSPA can and cannot currently do — and where we are on the path to full FCA authorisation.</p>
+    <div class="status-grid">
+      <div class="sg can">
+        <div class="sg-header"><div class="sg-dot green"></div><div class="sg-label">What we can do now — no FCA licence required</div></div>
+        <div class="sg-items">
+          <div class="sg-item">Grant advisory — identifying and applying for Innovate UK, UKRI, AfDB, IFC and EU Green Deal funding</div>
+          <div class="sg-item">Commercial Feasibility Report (CFR) production for renewable energy projects</div>
+          <div class="sg-item">Deal structuring advisory — term sheets, investment structure design, SPV guidance</div>
+          <div class="sg-item">Compliance and regulatory pathway advisory across UK, EU and EMEA jurisdictions</div>
+          <div class="sg-item">The VERSPA Launchpad — 12-week investment readiness programme (advisory only)</div>
+          <div class="sg-item">VERSPA Intelligence project scoring and grant radar</div>
+          <div class="sg-item">Investor and developer waitlist registration and information provision</div>
+          <div class="sg-item">Educational content, market intelligence and platform updates</div>
+        </div>
+      </div>
+      <div class="sg cannot">
+        <div class="sg-header"><div class="sg-dot amber"></div><div class="sg-label">What we cannot do yet — requires FCA authorisation</div></div>
+        <div class="sg-items">
+          <div class="sg-item">Facilitate investment transactions between investors and project developers</div>
+          <div class="sg-item">Hold client money or investor funds</div>
+          <div class="sg-item">List investment opportunities on a regulated marketplace</div>
+          <div class="sg-item">Operate a peer-to-peer lending or equity crowdfunding platform</div>
+          <div class="sg-item">Make financial promotions to retail investors</div>
+          <div class="sg-item">Provide regulated financial advice or investment recommendations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <span class="label">FCA authorisation pathway</span>
+    <h2 style="margin-top:1rem;max-width:600px">Our path to full<br><span class="it">platform authorisation.</span></h2>
+    <p style="margin-top:1.25rem;max-width:580px">We are pursuing FCA authorisation as a crowdfunding platform operator under the Financial Services and Markets Act 2000. This is the most rigorous and globally respected regulatory seal in alternative finance.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date active">2026 Q1</div><div><div class="tl-title">VERSPA Ltd incorporated</div><div class="tl-body">Companies House registration. Platform launched at verspa.co.uk. Advisory services live. Launchpad programme open. First clients onboarded.</div><div class="tl-tag now">Current</div></div></div>
+      <div class="tl-item"><div class="tl-date">2026 Q2</div><div><div class="tl-title">FCA compliance consultant engaged</div><div class="tl-body">Specialist FCA compliance consultant appointed to map the full authorisation pathway, prepare the regulatory business plan and begin the application process.</div><div class="tl-tag soon">Upcoming</div></div></div>
+      <div class="tl-item"><div class="tl-date">2026 Q3</div><div><div class="tl-title">FCA authorisation application submitted</div><div class="tl-body">Full application submitted to the FCA for authorisation as a crowdfunding platform operator. Application includes regulatory business plan, financial projections and compliance framework.</div><div class="tl-tag soon">Upcoming</div></div></div>
+      <div class="tl-item"><div class="tl-date">2026–2027</div><div><div class="tl-title">FCA review period</div><div class="tl-body">Standard FCA review period for crowdfunding platform authorisation is 6–18 months. We will update this page as the review progresses.</div><div class="tl-tag soon">Upcoming</div></div></div>
+      <div class="tl-item"><div class="tl-date">2027</div><div><div class="tl-title">Full platform launch</div><div class="tl-body">FCA authorisation received. VERSPA Capital Marketplace goes live. Investment transactions facilitated. Retail and institutional investors access projects. Diaspora investment rails launch.</div><div class="tl-tag soon">Target</div></div></div>
+      <div class="tl-item"><div class="tl-date">2027+</div><div><div class="tl-title">ECSP passport — EU expansion</div><div class="tl-body">Application for European Crowdfunding Service Provider (ECSP) passport, enabling VERSPA to operate across EU member states. Targeting Germany, France and Netherlands in the first phase.</div><div class="tl-tag soon">Target</div></div></div>
+    </div>
+    <div style="margin-top:4rem;padding:2rem 2.5rem;background:var(--off);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--teal)">
+      <p class="sm">This page is updated regularly as our regulatory status changes. If you have questions about our regulatory position, please <a href="book-a-call.html" style="color:var(--teal);font-weight:600">book a discovery call</a> or <a href="contact.html" style="color:var(--teal);font-weight:600">contact us directly</a>. We are always happy to discuss our regulatory position openly.</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div><a href="index.html" class="fb-logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a><div class="fb-tag">The global infrastructure layer for renewable energy finance.</div><div class="fsoc"><a href="#" class="fsb">in</a><a href="#" class="fsb">𝕏</a></div></div>
+      <div class="fcol"><h5>Services</h5><a href="launchpad.html">The Launchpad</a><a href="for-project-owners.html">For Project Owners</a><a href="for-funding-partners.html">For Funding Partners</a><a href="book-a-call.html">Book a Discovery Call</a></div>
+      <div class="fcol"><h5>Company</h5><a href="about.html">About VERSPA</a><a href="regulatory-status.html">Regulatory Status</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h5>Legal</h5><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="cookie-policy.html">Cookie Policy</a><a href="disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="fbot"><span class="fcopy">© 2026 VERSPA Ltd. London, United Kingdom.</span><div class="flegal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Risk Warning</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
+    <p class="fca-note">VERSPA is in the process of seeking FCA authorisation as a crowdfunding platform operator. Prior to authorisation, VERSPA provides advisory and deal structuring services only and does not facilitate investment transactions. VERSPA Ltd is registered in England and Wales. This website does not constitute financial advice.</p>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('up',scrollY>10),{passive:true})</script>
+</body>
+</html>

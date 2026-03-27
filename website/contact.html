@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSPA — Contact</title>
+<meta name="description" content="Get in touch with the VERSPA team. Project developers, investors, press, advisors and partners — we respond to all enquiries within 2 business days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B0C0E;--ink-70:rgba(11,12,14,.7);--ink-40:rgba(11,12,14,.4);--ink-12:rgba(11,12,14,.08);--white:#FFFFFF;--off:#F7F6F2;--teal:#0A6648;--teal-bright:#13996B;--teal-pale:#EAF4EF;--border:#E3E1DA;--F:'Libre Baskerville',Georgia,serif;--S:'Plus Jakarta Sans',system-ui,sans-serif;--M:'Space Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--S);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1{font-family:var(--F);font-size:clamp(2.8rem,5vw,5rem);font-weight:700;line-height:.97;letter-spacing:-.025em}
+.it{font-style:italic;color:var(--teal)}
+.label{font-family:var(--S);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+p{font-size:1.05rem;font-weight:300;line-height:1.78;color:var(--ink-70)}
+p.sm{font-size:.88rem;line-height:1.72}
+.container{max-width:1100px;margin:0 auto;padding:0 5vw}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--S);font-size:.85rem;font-weight:700;padding:.9rem 2rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none;border:none}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:var(--teal);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--border)}.btn-line:hover{border-color:var(--ink)}
+nav{position:fixed;inset:0 0 auto;z-index:900;height:66px;transition:all .3s}
+nav.up{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1320px;margin:0 auto;padding:0 5vw}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.lm{width:34px;height:34px;background:var(--ink);border-radius:5px;display:grid;place-items:center}
+.lm svg{width:20px;height:20px}
+.ln{font-family:var(--S);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.nl{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nl a{font-size:.82rem;font-weight:500;color:var(--ink-70);text-decoration:none;transition:color .15s}
+.nl a:hover{color:var(--ink)}
+.na{display:flex;gap:.6rem}
+.page-hero{padding:9rem 0 5rem;background:var(--off)}
+.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start;padding:5rem 0}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.ci-item{padding:1.5rem 2rem;background:var(--off);border:1px solid var(--border);border-radius:10px}
+.ci-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-40);margin-bottom:.5rem;font-family:var(--S)}
+.ci-value{font-size:.9rem;font-weight:600;color:var(--ink);font-family:var(--S)}
+.ci-sub{font-size:.8rem;color:var(--ink-40);margin-top:.2rem}
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.5rem;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.form-title{font-family:var(--S);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
+.form-sub{font-size:.82rem;color:var(--ink-40);margin-bottom:2rem}
+.form{display:flex;flex-direction:column;gap:1rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.ff{display:flex;flex-direction:column;gap:.35rem}
+.ff label{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);font-family:var(--S)}
+.ff input,.ff select,.ff textarea{background:var(--off);border:1.5px solid var(--border);border-radius:6px;color:var(--ink);font-family:var(--S);font-size:.92rem;padding:.8rem 1rem;outline:none;transition:border .18s;width:100%;appearance:none;resize:vertical}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--ink);background:#fff}
+.ff input::placeholder,.ff textarea::placeholder{color:var(--ink-40)}
+.fsub{background:var(--ink);color:#fff;border:none;border-radius:6px;padding:1.05rem;font-family:var(--S);font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s;margin-top:.25rem}
+.fsub:hover{background:var(--teal)}
+.fnote{font-size:.76rem;color:var(--ink-40);text-align:center;margin-top:.5rem}
+.success{display:none;text-align:center;padding:2.5rem 1rem}
+.success.on{display:block}
+.s-tick{font-family:var(--F);font-size:3rem;color:var(--teal);margin-bottom:.75rem}
+.s-title{font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;font-family:var(--S)}
+.s-body{font-size:.87rem;color:var(--ink-70);line-height:1.7}
+footer{background:var(--off);border-top:1px solid var(--border);padding:5rem 0 2.5rem}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.fb-logo{display:flex;align-items:center;gap:.45rem;text-decoration:none;margin-bottom:1.1rem}
+.fb-tag{font-size:.87rem;color:var(--ink-70);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.5rem}
+.fsb{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink-40);text-decoration:none;transition:all .15s;font-family:var(--S)}
+.fsb:hover{border-color:var(--teal);color:var(--teal)}
+.fcol h5{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;font-family:var(--S)}
+.fcol a{display:block;font-size:.87rem;color:var(--ink-70);text-decoration:none;margin-bottom:.6rem;transition:color .15s}
+.fcol a:hover{color:var(--teal)}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.8rem;color:var(--ink-40)}
+.flegal{display:flex;gap:1.5rem}
+.flegal a{font-size:.78rem;color:var(--ink-40);text-decoration:none;transition:color .15s}
+.flegal a:hover{color:var(--ink-70)}
+.fca-note{font-size:.72rem;color:var(--ink-40);line-height:1.65;margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border);max-width:700px}
+@media(max-width:1100px){.contact-layout{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:768px){h1{font-size:2.4rem}nav .nl,.na .btn-line{display:none}.ni{padding:0 1.25rem}.container{padding:0 1.25rem}.fg{grid-template-columns:1fr}.fbot{flex-direction:column;align-items:flex-start}.frow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a>
+    <ul class="nl"><li><a href="index.html">Home</a></li><li><a href="launchpad.html">Launchpad</a></li><li><a href="for-project-owners.html">For Developers</a></li><li><a href="for-funding-partners.html">For Investors</a></li><li><a href="about.html">About</a></li></ul>
+    <div class="na"><a href="book-a-call.html" class="btn btn-line" style="font-size:.8rem;padding:.6rem 1.1rem">Book a Call</a><a href="apply.html" class="btn btn-dark" style="font-size:.8rem;padding:.6rem 1.25rem">Get Started</a></div>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="container">
+    <span class="label">Contact</span>
+    <h1 style="margin-top:1rem">Get in<br><span class="it">touch.</span></h1>
+    <p style="margin-top:1.5rem;max-width:520px">We respond to every enquiry within 2 business days. For the fastest response, book a discovery call directly.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="contact-layout">
+    <div class="contact-info">
+      <div class="ci-item"><div class="ci-label">Location</div><div class="ci-value">London, United Kingdom</div><div class="ci-sub">Headquartered in London · Operating across UK, EU and EMEA</div></div>
+      <div class="ci-item"><div class="ci-label">Response time</div><div class="ci-value">Within 2 business days</div><div class="ci-sub">For urgent enquiries, book a discovery call directly</div></div>
+      <div class="ci-item"><div class="ci-label">Discovery calls</div><div class="ci-value"><a href="book-a-call.html" style="color:var(--teal);font-weight:600;text-decoration:none">Book a 30-minute call →</a></div><div class="ci-sub">Free · No obligation · Confirmed within 24 hours</div></div>
+      <div class="ci-item"><div class="ci-label">LinkedIn</div><div class="ci-value"><a href="#" style="color:var(--teal);font-weight:600;text-decoration:none">VERSPA on LinkedIn →</a></div><div class="ci-sub">Follow for platform updates and clean energy market insights</div></div>
+      <div class="ci-item" style="border-left:3px solid var(--teal)"><div class="ci-label">Press &amp; media</div><div class="ci-value">Use the contact form</div><div class="ci-sub">Select “Press” as your enquiry type and we will respond as a priority</div></div>
+    </div>
+    <div>
+      <div class="form-card">
+        <div class="form-title">Send a message</div>
+        <div class="form-sub">All fields marked * are required · We respond within 2 business days</div>
+        <div id="form-wrap">
+          <!-- HUBSPOT: VERSPA — General Contact · Portal ID: [ADD] · Form ID: [ADD] -->
+          <form class="form" onsubmit="submitForm(event)">
+            <div class="frow"><div class="ff"><label>Full name *</label><input type="text" placeholder="Your full name" required></div><div class="ff"><label>Email address *</label><input type="email" placeholder="you@example.com" required></div></div>
+            <div class="ff"><label>Organisation <span style="font-weight:400;color:var(--ink-40)">(optional)</span></label><input type="text" placeholder="Your company or organisation"></div>
+            <div class="ff"><label>Enquiry type *</label><select required><option value="">Select</option><option>Project developer</option><option>Investor</option><option>Institutional partnership</option><option>Press or media</option><option>Advisory partnership</option><option>B2B / API</option><option>General</option></select></div>
+            <div class="ff"><label>Subject *</label><input type="text" placeholder="What is your message about?" required></div>
+            <div class="ff"><label>Message *</label><textarea placeholder="Tell us what you need..." style="min-height:120px" required></textarea></div>
+            <div class="ff"><label>How did you hear about VERSPA? <span style="font-weight:400;color:var(--ink-40)">(optional)</span></label><select><option value="">Select</option><option>LinkedIn</option><option>Google search</option><option>Referral</option><option>Event or conference</option><option>Press or media</option><option>Other</option></select></div>
+            <button type="submit" class="fsub">Send Message →</button>
+            <div class="fnote">We respond to every message within 2 business days.</div>
+          </form>
+          <div class="success" id="form-success"><div class="s-tick">✓</div><div class="s-title">Message received.</div><div class="s-body">Thank you for getting in touch. We will respond within 2 business days. In the meantime, feel free to <a href="book-a-call.html" style="color:var(--teal);font-weight:600">book a discovery call</a> for a faster conversation.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div><a href="index.html" class="fb-logo"><div class="lm"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15L7 5L10 12L13 8L17 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ln">VERSPA</span></a><div class="fb-tag">The global infrastructure layer for renewable energy finance.</div><div class="fsoc"><a href="#" class="fsb">in</a><a href="#" class="fsb">𝕏</a></div></div>
+      <div class="fcol"><h5>Services</h5><a href="launchpad.html">The Launchpad</a><a href="for-project-owners.html">For Project Owners</a><a href="for-funding-partners.html">For Funding Partners</a><a href="book-a-call.html">Book a Discovery Call</a></div>
+      <div class="fcol"><h5>Company</h5><a href="about.html">About VERSPA</a><a href="regulatory-status.html">Regulatory Status</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h5>Legal</h5><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="cookie-policy.html">Cookie Policy</a><a href="disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="fbot"><span class="fcopy">© 2026 VERSPA Ltd. London, United Kingdom.</span><div class="flegal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Risk Warning</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
+    <p class="fca-note">VERSPA is in the process of seeking FCA authorisation. Prior to authorisation, VERSPA provides advisory and deal structuring services only. This website does not constitute financial advice. Capital is at risk.</p>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('up',scrollY>10),{passive:true});
+function submitForm(e){e.preventDefault();e.target.style.display='none';document.getElementById('form-success').classList.add('on')}
+</script>
+</body>
+</html>
